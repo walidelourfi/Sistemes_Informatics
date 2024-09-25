@@ -84,6 +84,14 @@
             
             <li class="nav-item" data-level="1"><a href="#punts-de-restauracio" class="nav-link">Punts de restauracio</a>
               <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#timeshift" class="nav-link">TimeShift</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#btrfs" class="nav-link">BTRFS</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
             
@@ -141,6 +149,31 @@ anem a /etc/netplan/ i modifiquem el arxiu 01-network.
 <img alt="alt text" src="../img/ConfigXarxa/ipaNetplan.png" />
 <img alt="alt text" src="../img/ConfigXarxa/pingNetplan.png" /></p>
 <h1 id="punts-de-restauracio">Punts de restauracio</h1>
+<h2 id="timeshift">TimeShift</h2>
+<p>Primer instalem TimeShift amb apt.
+[IMATGE]
+<br></p>
+<p>Entrem i creem una snapshot.
+<img alt="alt text" src="../img/Restauracio/timeshiftCrea.png" />
+<br></p>
+<p>Podrem comprovar que s'ens ha creat una instantanea amb el dia i hora de creacio.
+<img alt="alt text" src="../img/Restauracio/SnapshotTimeshift.png" />
+<br></p>
+<p>Instalem GParted per comprovar la restauracio.<br>
+<img alt="alt text" src="../img/Restauracio/programaFalso.png" />
+<br></p>
+<p>Per restaurar, escollim el snapshot i cliquem a restaura.
+<img alt="alt text" src="../img/Restauracio/Restaura.png" />
+<br></p>
+<p>Ens mostrara els arxius que es modificaran, crearan o s'eliminaran.
+<img alt="alt text" src="../img/Restauracio/canviar.png" />
+<br></p>
+<p>Despres, es reiniciara l'ordinador.<br>
+<img alt="alt text" src="../img/Restauracio/restauracioRestart.png" />
+<br></p>
+<p>Finalment, podem veure que gparted no esta.
+<img alt="alt text" src="../img/Restauracio/noGparted.png" /></p>
+<h2 id="btrfs">BTRFS</h2>
 <h1 id="grub">GRUB</h1>
 <h1 id="desinstalacio-aplicacions">Des/Instalacio Aplicacions</h1>
 <p><a href="https://creativecommons.org/share-your-work/cclicenses/">
