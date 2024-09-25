@@ -104,25 +104,42 @@
 <h1 id="installacio-so-ubuntu-24">Instal·lacio SO Ubuntu 24</h1>
 <p>Primer de tot, configurem la màquina virtual.<br> 
 En aquest cas, s'ha utilitzat les següents especificacions.
-<img alt="alt text" src="../img/specsMaquina.png" />
+<img alt="alt text" src="../img/instalacioSO/specsMaquina.png" />
 <br></p>
 <p>Per poder posar la xarxa NAT, primer creem una xarxa.<br>
-<img alt="alt text" src="../img/xarxa1.png" /></p>
+<img alt="alt text" src="../img/instalacioSO/xarxa1.png" /></p>
 <p>I creem una xarxa amb un nom.<br>
-<img alt="alt text" src="../img/xarxa2.png" />
+<img alt="alt text" src="../img/instalacioSO/xarxa2.png" />
 <br></p>
 <p>Escollim instal·lació manual.<br>
-<img alt="alt text" src="../img/instalacioManual.png" />
+<img alt="alt text" src="../img/instalacioSO/instalacioManual.png" />
 <br></p>
 <p>Posem les diferents particions que necessitem.<br>
 En aquest cas s'ha triat 5 GB de swap, ja que podria ser que la màquina es quedés sense memòria.<br>
 10 GB de home, ja que hi ha diferents usuaris que utilitzaran aquest ordinador i tota la informació que tenen es guardarà allí.<br>
 Finalment, 10 GB d'arrel, ja que sol contindrà les aplicacions necessàries dels usuaris.<br>
-<img alt="alt text" src="../img/particions.png" />
+<img alt="alt text" src="../img/instalacioSO/particions.png" />
 <br></p>
 <p>Finalment, tindrem les següents especificacions de màquina quant a SO.<br>
-<img alt="alt text" src="../img/specsFinals.png" /></p>
+<img alt="alt text" src="../img/instalacioSO/specsFinals.png" /></p>
 <h1 id="configuracio-xarxa">Configuracio Xarxa</h1>
+<p>Primer de tot, posem la configuracio manual des de parametres.
+<img alt="alt text" src="img/ConfigXarxa/" />
+<br></p>
+<p>I comprovem que funciona.
+<img alt="alt text" src="../img/ConfigXarxa/ipaAuto.png" />
+<img alt="alt text" src="../img/ConfigXarxa/pingAuto.png" />
+<br></p>
+<p>Per poder canviar la IP de forma manual des dels arxius de configuracio de linux, <br>
+anem a /etc/netplan/ i modifiquem el arxiu 01-network.
+<img alt="alt text" src="../img/ConfigXarxa/network_config.png" />
+<br></p>
+<p>Per poder aplicar els canvis, escrivim la comanda netplan apply.
+<img alt="alt text" src="../img/ConfigXarxa/netplanApply.png" />
+<br></p>
+<p>I comprovem que tenim la nova IP i conexio a internet.
+<img alt="alt text" src="../img/ConfigXarxa/ipaNetplan.png" />
+<img alt="alt text" src="../img/ConfigXarxa/pingNetplan.png" /></p>
 <h1 id="punts-de-restauracio">Punts de restauracio</h1>
 <h1 id="grub">GRUB</h1>
 <h1 id="desinstalacio-aplicacions">Des/Instalacio Aplicacions</h1>
