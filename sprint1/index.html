@@ -204,23 +204,23 @@ anem a /etc/netplan/ i modifiquem el arxiu 01-network.
 <p>GPT i MBR són dos sistemes de particionatge de discs.</p>
 <p>GPT i MBR s'inicien al principi tant per a carregar el SO com per a saber on comencen i acaben les particions del disc.</p>
 <h2 id="mbr">MBR</h2>
-<p>Master Boot Record es el sistema de particionatge mes antic dels dos.<br>
+<p>Master Boot Record és el sistema de particionatge més antic dels dos.<br>
 Està utilitzat per sistemes antics, sistemes amb BIOS i Windows.</p>
 <p>Està situat al principi del disc i conté:<br>
 - Bootloader: programa petit per a iniciar el SO.<br>
 - Taula de particions: mapa on es guarda les direccions de les particions.<br></p>
 <p>Les principals característiques són:<br>
 - Sol pot tindre 4 particions primàries.<br>
-- Una de les particions primàries ha de ser activa i per tant contindre el SO.<br>
-- Una de les particions pot ser extesa i contindre mes particions dintre.<br>
+- Una de les particions primàries ha de ser activa i, per tant, contenir el SO.<br>
+- Una de les particions pot ser estesa i contenir més particions dintre.<br>
 - Màxim de 2TB per a cada partició.<br>
 <img alt="alt text" src="../img/GRUB/MBRpartition.png" /></p>
 <h2 id="gpt">GPT</h2>
-<p>GUID Partition Table es un estandar de particions, i el mes nou dels dos.<br>
-Està utilitzat per sistemes més nous amb UEFI i sistemes 64 bits, tmabé l'utilitza linux.</p>
+<p>GUID Partition Table és un estàndard de particions, i el més nou dels dos.<br>
+Està utilitzat per sistemes més nous amb UEFI i sistemes 64 bits, també l'utilitza Linux.</p>
 <p>Conté:
-- MBR protectiu: per a que els sistemes mes antics no pensis que el disc està sense particionar i arrencar el SO.<br>
-- Header: Es guarda l'informació de les particions i de recuparació.<br>
+- MBR protectiu: perquè els sistemes més antics no pensis que el disc està sense particionar i arrencar el SO.<br>
+- Header: Es guarda la informació de les particions i de recuperació.<br>
 - Entrada de cada partició.<br></p>
 <p>Les principals característiques són: <br>
 - 128 particions.<br>
@@ -229,15 +229,15 @@ Està utilitzat per sistemes més nous amb UEFI i sistemes 64 bits, tmabé l'uti
 <img alt="alt text" src="../img/GRUB/GPTpartition.png" /></p>
 <h2 id="installacio-dual">Instal·lació DUAL</h2>
 <p>Sempre que es fa una instal·lació dual s'instal·la primer el sistema més antic i després el més nou.<br>
-Si es una arrancada dual de Windows i Linux, primer s'instal·la Windows i després Linux per a poder tenir al compatibilitat.<br>
-Si un dels dos sistemes no arranca. El més segur es que el sistema nou ha borrat el gestor d'arrancada del primer, s'haurà de recuperar el gestor.</p>
+Si és una arrancada dual de Windows i Linux, primer s'instal·la Windows i després Linux per a poder tenir compatibilitat.<br>
+Si un dels dos sistemes no arranca. El més segur és que el sistema nou ha esborrat el gestor d'arrancada del primer, s'haurà de recuperar el gestor.</p>
 <h2 id="grub">GRUB</h2>
-<p>GRand Unified Bootloader, es un dels gestors d'arrancada més populars per a Linux.<br>
+<p>GRand Unified Bootloader, és un dels gestors d'arrancada més populars per a Linux.<br>
 Serveix per a arrancar el SO des del MBR del disc.<br></p>
 <p>GRUB funciona en tres etapes:<br>
 - La primera etapa es troba al MBR i apunta a la resta del GRUB per a poder carregar de forma correcta el sistema de fitxers i SO.<br>
-- La segona etapa es més complex i s'encarrega de mostrar un menú amb els SO disponibles (si hi ha un passa directament a la següent etapa) i iniciar el sistema de fitxers.<br>
-- L'última etapa, s'encarrega d'arrencar el SO, en cas de linux, inicia el kernel i el initrd.</p>
+- La segona etapa es més complex i s'encarrega de mostrar un menú amb el SO disponibles (si hi ha un passa directament a la següent etapa) i iniciar el sistema de fitxers.<br>
+- L'última etapa, s'encarrega d'arrencar el SO, en cas de Linux, inicia el kernel i el initrd.</p>
 <h2 id="restaurar-grub">Restaurar GRUB</h2>
 <p>Primer de tot, esborrem la carpeta de GRUB.<br>
 <img alt="alt text" src="../img/GRUB/rmGRUB.png" /></p>
