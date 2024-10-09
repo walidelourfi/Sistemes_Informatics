@@ -495,6 +495,24 @@ Amb aquesta comanda hem afegit a la llista de repositoris el paquet, per a poder
 <img alt="alt text" src="../img/Instalacions/repositoris/catArxiu.png" /></p>
 <p>Al haber afegit l'arxiu el podrem instalar com qualsevol altre repositori de apt.
 <img alt="alt text" src="../img/Instalacions/repositoris/install.png" /></p>
+<h2 id="compilar">Compilar<a class="headerlink" href="#compilar" title="Permanent link">&para;</a></h2>
+<p>Es pot compilar el codi sense necessitat de un gestor de paquets, hi han diferentes maneres pero estes dos son les mes utilitzades.<br></p>
+<h3 id="targz">tar.gz<a class="headerlink" href="#targz" title="Permanent link">&para;</a></h3>
+<p>Descarguem un arxiu tar.gz i escrivim la comanda tar xvzf (arxiu).<br>
+<img alt="alt text" src="../img/Instalacions/Compilat/tarDescomprimit.png" /></p>
+<p>Dependentment de cada aplicacio, l'arxiu d'instalacio sera diferent, en aquest cas executem l'arxiu Discord.<br>
+<img alt="alt text" src="../img/Instalacions/Compilat/instalarDiscord.png" /></p>
+<h3 id="make-i-cmake">make i cmake<a class="headerlink" href="#make-i-cmake" title="Permanent link">&para;</a></h3>
+<p>Descarguem o clonem la carpeta.<br>
+<img alt="alt text" src="../img/Instalacions/Compilat/gitClone.png" /></p>
+<p>Dintre de la carpeta, podrem veure un arxiu cmake.config, aquest arxiu indica com a de compilar i instalar el programa a la comanda cmake.<br>
+<img alt="alt text" src="../img/Instalacions/Compilat/lsNeovim.png" /></p>
+<p>Instalem make i cmake, en aquest cas, neovim tambe necesita el paquet gettext per compilar.<br>
+Com indica a la pagina oficial de neovim, primer escriurem la comanda make (configuracio especifica).<br>
+en aquest cas, la configuracio especifica es opcional, ja que mostra que esta fent la comanda make i poder entendre si hi ha algun error.<br>
+<img alt="alt text" src="../img/Instalacions/Compilat/make.png" /></p>
+<p>Finalment, escrivim la comanda make install.<br>
+<img alt="alt text" src="../img/Instalacions/Compilat/cmake.png" /></p>
 
 
 
