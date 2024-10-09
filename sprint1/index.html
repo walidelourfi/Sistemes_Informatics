@@ -18,7 +18,7 @@
     
     
       
-        <title>Sprint_1 - Sistemes Informatics</title>
+        <title>Sprint 1 - Sistemes Informatics</title>
       
     
     
@@ -97,7 +97,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Sprint_1
+              Sprint 1
             
           </span>
         </div>
@@ -187,7 +187,7 @@
   
     
   
-  Sprint_1
+  Sprint 1
 
       </a>
     </li>
@@ -267,7 +267,7 @@
         
   
   <span class="md-ellipsis">
-    Sprint_1
+    Sprint 1
   </span>
   
 
@@ -294,7 +294,7 @@
 
 <h1 id="installacio-so-ubuntu-24">Instal·lacio SO Ubuntu 24<a class="headerlink" href="#installacio-so-ubuntu-24" title="Permanent link">&para;</a></h1>
 <p>Primer de tot, configurem la màquina virtual.<br> 
-En aquest cas, s'ha utilitzat les següents especificacions.
+En aquest cas, s'ha utilitzat les següents especificacions.<br>
 <img alt="alt text" src="../img/instalacioSO/specsMaquina.png" />
 <br></p>
 <p>Per poder posar la xarxa NAT, primer creem una xarxa.<br>
@@ -314,21 +314,21 @@ Finalment, 10 GB d'arrel, ja que sol contindrà les aplicacions necessàries del
 <p>Finalment, tindrem les següents especificacions de màquina quant a SO.<br>
 <img alt="alt text" src="../img/instalacioSO/specsFinals.png" /></p>
 <h1 id="configuracio-xarxa">Configuracio Xarxa<a class="headerlink" href="#configuracio-xarxa" title="Permanent link">&para;</a></h1>
-<p>Primer de tot, posem la configuració manual des de paràmetres.
+<p>Primer de tot, posem la configuració manual des de paràmetres.<br>
 <img alt="alt text" src="../img/ConfigXarxa/configAuto.png" />
 <br></p>
-<p>I comprovem que funciona.
+<p>I comprovem que funciona.<br>
 <img alt="alt text" src="../img/ConfigXarxa/ipaAuto.png" />
 <img alt="alt text" src="../img/ConfigXarxa/pingAuto.png" />
 <br></p>
 <p>Per poder canviar la IP de forma manual des dels arxius de configuració de linux, <br>
-anem a /etc/netplan/ i modifiquem el arxiu 01-network.
+anem a /etc/netplan/ i modifiquem el arxiu 01-network.<br>
 <img alt="alt text" src="../img/ConfigXarxa/network_config.png" />
 <br></p>
-<p>Per poder aplicar els canvis, escrivim la comanda netplan apply.
+<p>Per poder aplicar els canvis, escrivim la comanda netplan apply.<br>
 <img alt="alt text" src="../img/ConfigXarxa/netplanApply.png" />
 <br></p>
-<p>I comprovem que tenim la nova IP i connexió a internet.
+<p>I comprovem que tenim la nova IP i connexió a internet.<br>
 <img alt="alt text" src="../img/ConfigXarxa/ipaNetplan.png" />
 <img alt="alt text" src="../img/ConfigXarxa/pingNetplan.png" /></p>
 <h1 id="punts-de-restauracio">Punts de restauracio<a class="headerlink" href="#punts-de-restauracio" title="Permanent link">&para;</a></h1>
@@ -336,25 +336,25 @@ anem a /etc/netplan/ i modifiquem el arxiu 01-network.
 <p>Primer instal·lem TimeShift amb apt.<br>
 <img alt="alt text" src="../img/Restauracio/instalacioTime.png" />
 <br></p>
-<p>Entrem i creem una snapshot.
+<p>Entrem i creem una snapshot.<br>
 <img alt="alt text" src="../img/Restauracio/timeshiftCrea.png" />
 <br></p>
-<p>Podrem comprovar que se'ns ha creat una instantània amb el dia i hora de creació.
+<p>Podrem comprovar que se'ns ha creat una instantània amb el dia i hora de creació.<br>
 <img alt="alt text" src="../img/Restauracio/SnapshotTimeshift.png" />
 <br></p>
 <p>Instal·lem GParted per comprovar la restauració.<br>
 <img alt="alt text" src="../img/Restauracio/programaFalso.png" />
 <br></p>
-<p>Per restaurar, escollim el snapshot i cliquem a restaurar.
+<p>Per restaurar, escollim el snapshot i cliquem a restaurar.<br>
 <img alt="alt text" src="../img/Restauracio/Restaura.png" />
 <br></p>
-<p>Ens mostrarà els arxius que es modificaran, crearan o s'eliminaran.
+<p>Ens mostrarà els arxius que es modificaran, crearan o s'eliminaran.<br>
 <img alt="alt text" src="../img/Restauracio/canviar.png" />
 <br></p>
 <p>Després, es reiniciarà l'ordinador.<br>
 <img alt="alt text" src="../img/Restauracio/restauracioRestart.png" />
 <br></p>
-<p>Finalment, podem veure que gparted no esta.
+<p>Finalment, podem veure que gparted no esta.<br>
 <img alt="alt text" src="../img/Restauracio/noGparted.png" /></p>
 <h2 id="btrfs">BTRFS<a class="headerlink" href="#btrfs" title="Permanent link">&para;</a></h2>
 <p>És un sistema de volums els quals es poden fer snapshots de solament carpetes que existeixen dintre dels volums.</p>
@@ -377,11 +377,11 @@ Està utilitzat per sistemes antics, sistemes amb BIOS i Windows.</p>
 <h2 id="gpt">GPT<a class="headerlink" href="#gpt" title="Permanent link">&para;</a></h2>
 <p>GUID Partition Table és un estàndard de particions, i el més nou dels dos.<br>
 Està utilitzat per sistemes més nous amb UEFI i sistemes 64 bits, també l'utilitza Linux.</p>
-<p>Conté:
+<p>Conté:<br>
 - MBR protectiu: perquè els sistemes més antics no pensis que el disc està sense particionar i arrencar el SO.<br>
 - Header: Es guarda la informació de les particions i de recuperació.<br>
 - Entrada de cada partició.<br></p>
-<p>Les principals característiques són: <br>
+<p>Les principals característiques són:<br>
 - 128 particions.<br>
 - Màxim de 256TB per partició.<br>
 - La taula de particions es clona a una altra part del disc.<br>
@@ -400,33 +400,101 @@ Serveix per a arrancar el SO des del MBR del disc.<br></p>
 <h2 id="restaurar-grub">Restaurar GRUB<a class="headerlink" href="#restaurar-grub" title="Permanent link">&para;</a></h2>
 <p>Primer de tot, esborrem la carpeta de GRUB.<br>
 <img alt="alt text" src="../img/GRUB/rmGRUB.png" /></p>
-<p>Si reiniciem la màquina, podem veure que no troba el bootloader
+<p>Si reiniciem la màquina, podem veure que no troba el bootloader<br>
 <img alt="alt text" src="../img/GRUB/noFileFound.png" /></p>
 <h3 id="bootrepair">BootRepair<a class="headerlink" href="#bootrepair" title="Permanent link">&para;</a></h3>
-<p>Introduïm l'ISO de bootrepair i iniciem de nou la màquina. Al principi, revisarà l'estat de la màquina.
+<p>Introduïm l'ISO de bootrepair i iniciem de nou la màquina. Al principi, revisarà l'estat de la màquina.<br>
 <img alt="alt text" src="../img/GRUB/bootrepair/inicioRepair.png" /></p>
-<p>Després d'una comprovació, podrem iniciar la reparació automàtica o que ens mostri l'informació sobre l'error.
+<p>Després d'una comprovació, podrem iniciar la reparació automàtica o que ens mostri l'informació sobre l'error.<br>
 <img alt="alt text" src="../img/GRUB/bootrepair/RecommendRepair.png" /></p>
-<p>Si escollim reparació automàtica, ens donarà l'opció de pujar i visualitzar l'informe de l'error i com s'ha arreglat.
+<p>Si escollim reparació automàtica, ens donarà l'opció de pujar i visualitzar l'informe de l'error i com s'ha arreglat.<br>
 <img alt="alt text" src="../img/GRUB/bootrepair/ReportPaste.png" /></p>
-<p>Després d'uns quants minuts, s'ha arreglat el grub. També ens mostrarà el link per visualitzar l'informe.
+<p>Després d'uns quants minuts, s'ha arreglat el grub. També ens mostrarà el link per visualitzar l'informe.<br>
 <img alt="alt text" src="../img/GRUB/bootrepair/Repaired.png" /></p>
-<p>En aquest cas, l'informe ens mostra que ha reinstal·lat el grub.
+<p>En aquest cas, l'informe ens mostra que ha reinstal·lat el grub.<br>
 <img alt="alt text" src="../img/GRUB/bootrepair/PasteBin.png" /></p>
-<p>Finalment, podrem tornar a iniciar el SO.
+<p>Finalment, podrem tornar a iniciar el SO.<br>
 <img alt="alt text" src="../img/GRUB/bootrepair/FIn.png" /></p>
 <h3 id="super-grub2">Super GRUB2<a class="headerlink" href="#super-grub2" title="Permanent link">&para;</a></h3>
-<p>Introduïm l'ISO de súper GRUB2 i iniciem la màquina. Escollim l'opció d'arrancar manualment.
+<p>Introduïm l'ISO de súper GRUB2 i iniciem la màquina. Escollim l'opció d'arrancar manualment.<br>
 <img alt="alt text" src="../img/GRUB/grub2/manualBoot.png" /></p>
-<p>Seguidament, escollim que ens mostri els SO instal·lats.
+<p>Seguidament, escollim que ens mostri els SO instal·lats.<br>
 <img alt="alt text" src="../img/GRUB/grub2/showSo.png" /></p>
-<p>I escollim Linux. En aquest cas sol està aquest SO.
+<p>I escollim Linux. En aquest cas sol està aquest SO.<br>
 <img alt="alt text" src="../img/GRUB/grub2/linuxBoot.png" /></p>
 <p>Entrem a la terminal i instal·lam GRUB.<br>
 <img alt="alt text" src="../img/GRUB/grub2/grubInstall.png" /></p>
-<p>Finalment, actualitzem GRUB per a crear el seu fitxer de configuració i trobar els SO instal·lats.
+<p>Finalment, actualitzem GRUB per a crear el seu fitxer de configuració i trobar els SO instal·lats.<br>
 <img alt="alt text" src="../img/GRUB/grub2/updateGRUB.png" /></p>
-<h1 id="desinstalacio-aplicacions">Des/Instalacio Aplicacions<a class="headerlink" href="#desinstalacio-aplicacions" title="Permanent link">&para;</a></h1>
+<h1 id="gestors-de-paquets">Gestors de Paquets<a class="headerlink" href="#gestors-de-paquets" title="Permanent link">&para;</a></h1>
+<p>Els gestors de paquets són software el qual automitza el maneig de paquets per instal·lar, desinstal·lar i actualitzar software.</p>
+<h2 id="apt">APT<a class="headerlink" href="#apt" title="Permanent link">&para;</a></h2>
+<h3 id="actualitzacions">Actualitzacions<a class="headerlink" href="#actualitzacions" title="Permanent link">&para;</a></h3>
+<p>Per actualitzar els links als repositoris, escribim apt update.<br>
+<img alt="alt text" src="../img/Instalacions/APT/generalUpdate.png" /></p>
+<p>Instal·lem els paquets actualitzats, juntament amb les dependencies necessaries amb apt dist-upgrade.<br>
+<img alt="alt text" src="../img/Instalacions/APT/distUpgrade.png" /></p>
+<h3 id="installacio">Instal·lació<a class="headerlink" href="#installacio" title="Permanent link">&para;</a></h3>
+<p>Per instal·lar utilitzem la comanda apt install (paquet).<br></p>
+<p><img alt="alt text" src="../img/Instalacions/APT/installNormal.png" /></p>
+<h3 id="desinstallacio">Desinstal·lació<a class="headerlink" href="#desinstallacio" title="Permanent link">&para;</a></h3>
+<p>Per desinstal·lar un paquet, escribim apt remove (paquet).<br>
+Encara que haguessim desinstal·lat el paquet, les dependencies i configuracions instal·lades continuraran al equip.<br></p>
+<p><img alt="alt text" src="../img/Instalacions/APT/removeNormal.png" /></p>
+<p>Si volem treure les configuracions, escribim apt purge (paquet).<br>
+<img alt="alt text" src="../img/Instalacions/APT/purge.png" /></p>
+<p>Si volem desinstal·lar les dependencies, escribim la comanda apt autoremove.<br>
+Aquesta comanda borra tots els paquets que el equip no necessita.<br></p>
+<p><img alt="alt text" src="../img/Instalacions/APT/autoremove.png" /></p>
+<h3 id="versions">Versions<a class="headerlink" href="#versions" title="Permanent link">&para;</a></h3>
+<p>Per veure la versió d'un paquet, escribim la comanda apt-cache policy (paquet).<br>
+<img alt="alt text" src="../img/Instalacions/APT/cachePolicy.png" /></p>
+<h3 id="arreglar-installacions">Arreglar Instal·lacions<a class="headerlink" href="#arreglar-installacions" title="Permanent link">&para;</a></h3>
+<p>Per arreglar instal·lacions, escribim la comanda apt -f install.<br>
+<img alt="alt text" src="../img/Instalacions/APT/fixInstall.png" /></p>
+<h2 id="aptitude">Aptitude<a class="headerlink" href="#aptitude" title="Permanent link">&para;</a></h2>
+<h3 id="instalacio">Instalacio<a class="headerlink" href="#instalacio" title="Permanent link">&para;</a></h3>
+<p>Per instalar amb aptitude utilitzem la comanda aptitude install (paquet).<br>
+<img alt="alt text" src="../img/Instalacions/aptitude/install.png" /></p>
+<h3 id="desinstalar">Desinstalar<a class="headerlink" href="#desinstalar" title="Permanent link">&para;</a></h3>
+<p>Per desinstalar, escribim la comanda aptitude remove (paquet).<br>
+<img alt="alt text" src="../img/Instalacions/aptitude/removeNginx.png" /></p>
+<p>Si desinstalem un paquet amb dependencies, tambe es desinstalaran.<br>
+<img alt="alt text" src="../img/Instalacions/aptitude/removeOBS.png" /></p>
+<h3 id="versions_1">Versions<a class="headerlink" href="#versions_1" title="Permanent link">&para;</a></h3>
+<p>Per veure la versio dels paquets escribim aptitude show (paquet).<br>
+<img alt="alt text" src="../img/Instalacions/aptitude/show.png" /></p>
+<h2 id="dpkg">DPKG<a class="headerlink" href="#dpkg" title="Permanent link">&para;</a></h2>
+<p>En aquest gestor de paquets, es treballa directament amb arxius .deb.<br></p>
+<h3 id="instalar">Instalar<a class="headerlink" href="#instalar" title="Permanent link">&para;</a></h3>
+<p>Per instalar paquets escribim dpkg -i (paquet).<br>
+<img alt="alt text" src="../img/Instalacions/DPKG/install.png" /></p>
+<h3 id="desinstalar_1">Desinstalar<a class="headerlink" href="#desinstalar_1" title="Permanent link">&para;</a></h3>
+<p>Per desinstalar, escribim la comanda dpkg -r (paquet), igual que APT,no borrara la configuracio de l'aplicacio.<br>
+<img alt="alt text" src="../img/Instalacions/DPKG/remove.png" /></p>
+<p>Si volem desinstalar i borrar la configuracio, escribim dpkg -P (paquet).<br>
+<img alt="alt text" src="../img/Instalacions/DPKG/removeAll.png" /></p>
+<h3 id="versions_2">Versions<a class="headerlink" href="#versions_2" title="Permanent link">&para;</a></h3>
+<p>Per veure la versio del paquet instalat, escribim dpkg -s (paquet).<br></p>
+<h3 id="comprovacions">Comprovacions<a class="headerlink" href="#comprovacions" title="Permanent link">&para;</a></h3>
+<p>Si volem veure si tenim un paquet instalat, escribim la comanda dpkg --select-selections | grep (paquet).<br>
+Si el paquet esta instalat, ens mostrara el nom del paquet.<br>
+<img alt="alt text" src="../img/Instalacions/DPKG/comprobarInstall.png" /></p>
+<p>Si no esta instalat, no ens sortira res.<br>
+<img alt="alt text" src="../img/Instalacions/DPKG/comprobarDesinstalacio.png" /></p>
+<h2 id="repositoris">Repositoris<a class="headerlink" href="#repositoris" title="Permanent link">&para;</a></h2>
+<p>Amb APT es poden afegir repositoris que no estiguin o versions alternatives de la mateixa.<br>
+Primer afegim la linea add-apt-repository ppa:(paquet)/(versio).<br>
+<img alt="alt text" src="../img/Instalacions/repositoris/addRepositori.png" /></p>
+<p>PPA es la forma en que desarrolladors individuals i equips de distribuir el seu sistema sense estar dins d'un gestor de paquets.<br>
+Amb aquesta comanda hem afegit a la llista de repositoris el paquet, per a poder instalarlo, actualitzem la llista.<br>
+<img alt="alt text" src="../img/Instalacions/repositoris/update.png" /></p>
+<p>En la carpeta /etc/apt/sources.list.d podrem veure que s'ha creat l'arxiu el cual te la informacio del repostori.<br>
+<img alt="alt text" src="../img/Instalacions/repositoris/creacioArxiu.png" /></p>
+<p>Si fem un cat per veure el arxiu, podrem veure que conte el tipus de paquet, el link on descargar-ho i la clau publica.<br>
+<img alt="alt text" src="../img/Instalacions/repositoris/catArxiu.png" /></p>
+<p>Al haber afegit l'arxiu el podrem instalar com qualsevol altre repositori de apt.
+<img alt="alt text" src="../img/Instalacions/repositoris/install.png" /></p>
 
 
 
