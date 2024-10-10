@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#installacio-so-ubuntu-24" class="md-skip">
+        <a href="#index" class="md-skip">
           Skip to content
         </a>
       
@@ -292,6 +292,62 @@
                   
 
 
+<h1 id="index">ÍNDEX<a class="headerlink" href="#index" title="Permanent link">&para;</a></h1>
+<div class="toc">
+<ul>
+<li><a href="#index">ÍNDEX</a></li>
+<li><a href="#installacio-so-ubuntu-24">Instal·lacio SO Ubuntu 24</a></li>
+<li><a href="#configuracio-xarxa">Configuracio Xarxa</a></li>
+<li><a href="#punts-de-restauracio">Punts de restauracio</a><ul>
+<li><a href="#timeshift">TimeShift</a></li>
+<li><a href="#btrfs">BTRFS</a></li>
+</ul>
+</li>
+<li><a href="#gestor-darrancada">Gestor d'arrancada</a><ul>
+<li><a href="#gpt-i-mbr">GPT i MBR</a></li>
+<li><a href="#mbr">MBR</a></li>
+<li><a href="#gpt">GPT</a></li>
+<li><a href="#installacio-dual">Instal·lació DUAL</a></li>
+<li><a href="#grub">GRUB</a></li>
+<li><a href="#restaurar-grub">Restaurar GRUB</a><ul>
+<li><a href="#bootrepair">BootRepair</a></li>
+<li><a href="#super-grub2">Super GRUB2</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#gestors-de-paquets">Gestors de Paquets</a><ul>
+<li><a href="#apt">APT</a><ul>
+<li><a href="#actualitzacions">Actualitzacions</a></li>
+<li><a href="#installacio">Instal·lació</a></li>
+<li><a href="#desinstallacio">Desinstal·lació</a></li>
+<li><a href="#versions">Versions</a></li>
+<li><a href="#arreglar-installacions">Arreglar Instal·lacions</a></li>
+</ul>
+</li>
+<li><a href="#aptitude">Aptitude</a><ul>
+<li><a href="#installacio_1">Instal·lació</a></li>
+<li><a href="#desinstalar">Desinstalar</a></li>
+<li><a href="#versions_1">Versions</a></li>
+</ul>
+</li>
+<li><a href="#dpkg">DPKG</a><ul>
+<li><a href="#installar">Instal·lar</a></li>
+<li><a href="#desinstallar">Desinstal·lar</a></li>
+<li><a href="#versions_2">Versions</a></li>
+<li><a href="#comprovacions">Comprovacions</a></li>
+</ul>
+</li>
+<li><a href="#repositoris">Repositoris</a></li>
+<li><a href="#compilar">Compilar</a><ul>
+<li><a href="#targz">tar.gz</a></li>
+<li><a href="#make-i-cmake">make i cmake</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
 <h1 id="installacio-so-ubuntu-24">Instal·lacio SO Ubuntu 24<a class="headerlink" href="#installacio-so-ubuntu-24" title="Permanent link">&para;</a></h1>
 <p>Primer de tot, configurem la màquina virtual.<br> 
 En aquest cas, s'ha utilitzat les següents especificacions.<br>
@@ -427,89 +483,89 @@ Serveix per a arrancar el SO des del MBR del disc.<br></p>
 <p>Finalment, actualitzem GRUB per a crear el seu fitxer de configuració i trobar els SO instal·lats.<br>
 <img alt="alt text" src="../img/GRUB/grub2/updateGRUB.png" /></p>
 <h1 id="gestors-de-paquets">Gestors de Paquets<a class="headerlink" href="#gestors-de-paquets" title="Permanent link">&para;</a></h1>
-<p>Els gestors de paquets són software el qual automitza el maneig de paquets per instal·lar, desinstal·lar i actualitzar software.</p>
+<p>Els gestors de paquets són software el qual automatitza el maneig de paquets per instal·lar, desinstal·lar i actualitzar software.</p>
 <h2 id="apt">APT<a class="headerlink" href="#apt" title="Permanent link">&para;</a></h2>
 <h3 id="actualitzacions">Actualitzacions<a class="headerlink" href="#actualitzacions" title="Permanent link">&para;</a></h3>
-<p>Per actualitzar els links als repositoris, escribim apt update.<br>
+<p>Per actualitzar els links als repositoris, escrivim apt update.<br>
 <img alt="alt text" src="../img/Instalacions/APT/generalUpdate.png" /></p>
-<p>Instal·lem els paquets actualitzats, juntament amb les dependencies necessaries amb apt dist-upgrade.<br>
+<p>Instal·lem els paquets actualitzats, juntament amb les dependències necessàries amb apt dist-upgrade.<br>
 <img alt="alt text" src="../img/Instalacions/APT/distUpgrade.png" /></p>
 <h3 id="installacio">Instal·lació<a class="headerlink" href="#installacio" title="Permanent link">&para;</a></h3>
 <p>Per instal·lar utilitzem la comanda apt install (paquet).<br></p>
 <p><img alt="alt text" src="../img/Instalacions/APT/installNormal.png" /></p>
 <h3 id="desinstallacio">Desinstal·lació<a class="headerlink" href="#desinstallacio" title="Permanent link">&para;</a></h3>
-<p>Per desinstal·lar un paquet, escribim apt remove (paquet).<br>
-Encara que haguessim desinstal·lat el paquet, les dependencies i configuracions instal·lades continuraran al equip.<br></p>
+<p>Per desinstal·lar un paquet, escrivim apt remove (paquet).<br>
+Encara que haguéssim desinstal·lat el paquet, les dependències i configuracions instal·lades continuaran a l'equip.<br></p>
 <p><img alt="alt text" src="../img/Instalacions/APT/removeNormal.png" /></p>
-<p>Si volem treure les configuracions, escribim apt purge (paquet).<br>
+<p>Si volem treure les configuracions, escrivim apt purge (paquet).<br>
 <img alt="alt text" src="../img/Instalacions/APT/purge.png" /></p>
-<p>Si volem desinstal·lar les dependencies, escribim la comanda apt autoremove.<br>
-Aquesta comanda borra tots els paquets que el equip no necessita.<br></p>
+<p>Si volem desinstal·lar les dependències, escrivim la comanda apt autoremove.<br>
+Aquesta comanda borra tots els paquets que l'equip no necessita.<br></p>
 <p><img alt="alt text" src="../img/Instalacions/APT/autoremove.png" /></p>
 <h3 id="versions">Versions<a class="headerlink" href="#versions" title="Permanent link">&para;</a></h3>
-<p>Per veure la versió d'un paquet, escribim la comanda apt-cache policy (paquet).<br>
+<p>Per veure la versió d'un paquet, escrivim la comanda apt-cache policy (paquet).<br>
 <img alt="alt text" src="../img/Instalacions/APT/cachePolicy.png" /></p>
 <h3 id="arreglar-installacions">Arreglar Instal·lacions<a class="headerlink" href="#arreglar-installacions" title="Permanent link">&para;</a></h3>
-<p>Per arreglar instal·lacions, escribim la comanda apt -f install.<br>
+<p>Per arreglar instal·lacions, escrivim la comanda apt -f install.<br>
 <img alt="alt text" src="../img/Instalacions/APT/fixInstall.png" /></p>
 <h2 id="aptitude">Aptitude<a class="headerlink" href="#aptitude" title="Permanent link">&para;</a></h2>
-<h3 id="instalacio">Instalacio<a class="headerlink" href="#instalacio" title="Permanent link">&para;</a></h3>
-<p>Per instalar amb aptitude utilitzem la comanda aptitude install (paquet).<br>
+<h3 id="installacio_1">Instal·lació<a class="headerlink" href="#installacio_1" title="Permanent link">&para;</a></h3>
+<p>Per instal·lar amb aptitude utilitzem la comanda aptitude install (paquet).<br>
 <img alt="alt text" src="../img/Instalacions/aptitude/install.png" /></p>
 <h3 id="desinstalar">Desinstalar<a class="headerlink" href="#desinstalar" title="Permanent link">&para;</a></h3>
-<p>Per desinstalar, escribim la comanda aptitude remove (paquet).<br>
+<p>Per desinstal·lar, escrivim la comanda aptitude remove (paquet).<br>
 <img alt="alt text" src="../img/Instalacions/aptitude/removeNginx.png" /></p>
-<p>Si desinstalem un paquet amb dependencies, tambe es desinstalaran.<br>
+<p>Si desinstal·lem un paquet amb dependències, també es desinstal·laran.<br>
 <img alt="alt text" src="../img/Instalacions/aptitude/removeOBS.png" /></p>
 <h3 id="versions_1">Versions<a class="headerlink" href="#versions_1" title="Permanent link">&para;</a></h3>
-<p>Per veure la versio dels paquets escribim aptitude show (paquet).<br>
+<p>Per veure la versió dels paquets escrivim aptitude show (paquet).<br>
 <img alt="alt text" src="../img/Instalacions/aptitude/show.png" /></p>
 <h2 id="dpkg">DPKG<a class="headerlink" href="#dpkg" title="Permanent link">&para;</a></h2>
 <p>En aquest gestor de paquets, es treballa directament amb arxius .deb.<br></p>
-<h3 id="instalar">Instalar<a class="headerlink" href="#instalar" title="Permanent link">&para;</a></h3>
-<p>Per instalar paquets escribim dpkg -i (paquet).<br>
+<h3 id="installar">Instal·lar<a class="headerlink" href="#installar" title="Permanent link">&para;</a></h3>
+<p>Per instal·lar paquets escrivim dpkg -i (paquet).<br>
 <img alt="alt text" src="../img/Instalacions/DPKG/install.png" /></p>
-<h3 id="desinstalar_1">Desinstalar<a class="headerlink" href="#desinstalar_1" title="Permanent link">&para;</a></h3>
-<p>Per desinstalar, escribim la comanda dpkg -r (paquet), igual que APT,no borrara la configuracio de l'aplicacio.<br>
+<h3 id="desinstallar">Desinstal·lar<a class="headerlink" href="#desinstallar" title="Permanent link">&para;</a></h3>
+<p>Per desinstal·lar, escrivim la comanda dpkg -r (paquet), igual que APT, no esborrara la configuració de l'aplicació.<br>
 <img alt="alt text" src="../img/Instalacions/DPKG/remove.png" /></p>
-<p>Si volem desinstalar i borrar la configuracio, escribim dpkg -P (paquet).<br>
+<p>Si volem desinstal·lar i esborrar la configuració, escrivim dpkg -P (paquet).<br>
 <img alt="alt text" src="../img/Instalacions/DPKG/removeAll.png" /></p>
 <h3 id="versions_2">Versions<a class="headerlink" href="#versions_2" title="Permanent link">&para;</a></h3>
-<p>Per veure la versio del paquet instalat, escribim dpkg -s (paquet).<br></p>
+<p>Per veure la versió del paquet instal·lat, escrivim dpkg -s (paquet).<br></p>
 <h3 id="comprovacions">Comprovacions<a class="headerlink" href="#comprovacions" title="Permanent link">&para;</a></h3>
-<p>Si volem veure si tenim un paquet instalat, escribim la comanda dpkg --select-selections | grep (paquet).<br>
-Si el paquet esta instalat, ens mostrara el nom del paquet.<br>
+<p>Si volem veure si tenim un paquet instal·lat, escrivim la comanda dpkg --select-selections | grep (paquet).<br>
+Si el paquet està instal·lat, ens mostrarà el nom del paquet.<br>
 <img alt="alt text" src="../img/Instalacions/DPKG/comprobarInstall.png" /></p>
-<p>Si no esta instalat, no ens sortira res.<br>
+<p>Si no està instal·lat, no ens sortirà res.<br>
 <img alt="alt text" src="../img/Instalacions/DPKG/comprobarDesinstalacio.png" /></p>
 <h2 id="repositoris">Repositoris<a class="headerlink" href="#repositoris" title="Permanent link">&para;</a></h2>
-<p>Amb APT es poden afegir repositoris que no estiguin o versions alternatives de la mateixa.<br>
-Primer afegim la linea add-apt-repository ppa:(paquet)/(versio).<br>
+<p>Amb APT es poden afegir repositoris que no estiguin o versions alternatives d'aquesta.<br>
+Primer afegim la línia add-apt-repository ppa:(paquet)/(versio).<br>
 <img alt="alt text" src="../img/Instalacions/repositoris/addRepositori.png" /></p>
-<p>PPA es la forma en que desarrolladors individuals i equips de distribuir el seu sistema sense estar dins d'un gestor de paquets.<br>
-Amb aquesta comanda hem afegit a la llista de repositoris el paquet, per a poder instalarlo, actualitzem la llista.<br>
+<p>PPA és la forma en què desenvolupadors individuals i equips de distribuir el seu sistema sense estar dins d'un gestor de paquets.<br>
+Amb aquesta comanda hem afegit a la llista de repositoris el paquet, per a poder instal·lar-lo, actualitzem la llista.<br>
 <img alt="alt text" src="../img/Instalacions/repositoris/update.png" /></p>
-<p>En la carpeta /etc/apt/sources.list.d podrem veure que s'ha creat l'arxiu el cual te la informacio del repostori.<br>
+<p>En la carpeta /etc/apt/sources.list.d podrem veure que s'ha creat l'arxiu el qual té la informació del repositori.<br>
 <img alt="alt text" src="../img/Instalacions/repositoris/creacioArxiu.png" /></p>
-<p>Si fem un cat per veure el arxiu, podrem veure que conte el tipus de paquet, el link on descargar-ho i la clau publica.<br>
+<p>Si fem un cat per veure l'arxiu, podrem veure que conté el tipus de paquet, el link on descarregar-ho i la clau pública.<br>
 <img alt="alt text" src="../img/Instalacions/repositoris/catArxiu.png" /></p>
-<p>Al haber afegit l'arxiu el podrem instalar com qualsevol altre repositori de apt.
+<p>A l'haver afegit l'arxiu el podrem instal·lar com qualsevol altre repositori d'APT.<br>
 <img alt="alt text" src="../img/Instalacions/repositoris/install.png" /></p>
 <h2 id="compilar">Compilar<a class="headerlink" href="#compilar" title="Permanent link">&para;</a></h2>
-<p>Es pot compilar el codi sense necessitat de un gestor de paquets, hi han diferentes maneres pero estes dos son les mes utilitzades.<br></p>
+<p>Es pot compilar el codi sense necessitat d'un gestor de paquets, hi ha diferents maneres, però aquestes dues són les més utilitzades.<br></p>
 <h3 id="targz">tar.gz<a class="headerlink" href="#targz" title="Permanent link">&para;</a></h3>
-<p>Descarguem un arxiu tar.gz i escrivim la comanda tar xvzf (arxiu).<br>
+<p>Descarreguem un arxiu tar.gz i escrivim la comanda tar xvzf (arxiu).<br>
 <img alt="alt text" src="../img/Instalacions/Compilat/tarDescomprimit.png" /></p>
-<p>Dependentment de cada aplicacio, l'arxiu d'instalacio sera diferent, en aquest cas executem l'arxiu Discord.<br>
+<p>Dependentment de cada aplicació, l'arxiu d'instal·lació serà diferent, en aquest cas executem l'arxiu Discord.<br>
 <img alt="alt text" src="../img/Instalacions/Compilat/instalarDiscord.png" /></p>
 <h3 id="make-i-cmake">make i cmake<a class="headerlink" href="#make-i-cmake" title="Permanent link">&para;</a></h3>
-<p>Descarguem o clonem la carpeta.<br>
+<p>Descarreguem o clonem la carpeta.<br>
 <img alt="alt text" src="../img/Instalacions/Compilat/gitClone.png" /></p>
-<p>Dintre de la carpeta, podrem veure un arxiu cmake.config, aquest arxiu indica com a de compilar i instalar el programa a la comanda cmake.<br>
+<p>Dintre de la carpeta, podrem veure un arxiu cmake.config, aquest arxiu indica com ha de compilar i instal·lar el programa a la comanda cmake.<br>
 <img alt="alt text" src="../img/Instalacions/Compilat/lsNeovim.png" /></p>
-<p>Instalem make i cmake, en aquest cas, neovim tambe necesita el paquet gettext per compilar.<br>
-Com indica a la pagina oficial de neovim, primer escriurem la comanda make (configuracio especifica).<br>
-en aquest cas, la configuracio especifica es opcional, ja que mostra que esta fent la comanda make i poder entendre si hi ha algun error.<br>
+<p>Instal·lem make i cmake, en aquest cas, neovim també necessita el paquet gettext per compilar.<br>
+Com indica a la pàgina oficial de neovim, primer escriurem la comanda make (configuració específica).<br>
+En aquest cas, la configuració específica és opcional, ja que mostra que està fent la comanda make i poder entendre si hi ha algun error.<br>
 <img alt="alt text" src="../img/Instalacions/Compilat/make.png" /></p>
 <p>Finalment, escrivim la comanda make install.<br>
 <img alt="alt text" src="../img/Instalacions/Compilat/cmake.png" /></p>
