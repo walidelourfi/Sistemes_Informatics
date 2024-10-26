@@ -517,6 +517,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#pinning-packets" class="md-nav__link">
+    Pinning Packets
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#arreglar-installacions" class="md-nav__link">
     Arreglar Instal·lacions
   </a>
@@ -714,6 +721,7 @@
 <li><a href="#installacio">Instal·lació</a></li>
 <li><a href="#desinstallacio">Desinstal·lació</a></li>
 <li><a href="#versions">Versions</a></li>
+<li><a href="#pinning-packets">Pinning Packets</a></li>
 <li><a href="#arreglar-installacions">Arreglar Instal·lacions</a></li>
 </ul>
 </li>
@@ -897,6 +905,32 @@ Aquesta comanda borra tots els paquets que l'equip no necessita.<br></p>
 <h4 id="versions">Versions</h4>
 <p>Per veure la versió d'un paquet, escrivim la comanda apt-cache policy (paquet).<br>
 <img alt="alt text" src="../img/Instalacions/APT/cachePolicy.png" /></p>
+<h4 id="pinning-packets">Pinning Packets</h4>
+<p>Aquest mètode consisteix a posar certes prioritats a diferents versions d'un paquet.<br>
+Primer mirem quina versió de paquet tenim.<br>
+En aquest cas, nmap té la versió 7.94 amb una prioritat de 500.<br>
+<img alt="alt text" src="../img/Instalacions/APT/policy500.png" /></p>
+<p>Per posar diferents versions, creem un nou fitxer a la carpeta.<br></p>
+<pre>
+<code class="language-terminal">
+/etc/apt/preferences.d/
+</code>
+</pre>
+
+<p>Dintre del fitxer, escrivim les següents línies.</p>
+<pre>
+<code class="language-terminal">
+Package: (nom paquet)
+Pin: version (versio)
+Pin-priority: (num prioritat)
+</code>
+</pre>
+
+<p>Exemple utilitzant el paquet nmap.<br>
+<img alt="alt text" src="../img/Instalacions/APT/preferencesNmap.png" /></p>
+<p>En pin priority, la prioritat es dona al número més baix.<br></p>
+<p>Finalment, si mirem la política del paquet, podem veure que s'ha canviat la prioritat.<br>
+<img alt="alt text" src="../img/Instalacions/APT/policy200.png" /></p>
 <h4 id="arreglar-installacions">Arreglar Instal·lacions</h4>
 <p>Per arreglar instal·lacions, escrivim la comanda apt -f install.<br>
 <img alt="alt text" src="../img/Instalacions/APT/fixInstall.png" /></p>
