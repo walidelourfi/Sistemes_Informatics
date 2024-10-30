@@ -77,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#comandes" class="md-skip">
+        <a href="#gestio-de-procesos" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -338,8 +338,6 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
-      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -368,8 +366,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -395,6 +391,20 @@
           <li class="md-nav__item">
   <a href="#filtratge" class="md-nav__link">
     Filtratge
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#matar-processos" class="md-nav__link">
+    Matar processos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#treballs" class="md-nav__link">
+    Treballs
   </a>
   
 </li>
@@ -427,7 +437,8 @@
                   
 
 
-<h1 id="comandes">COMANDES</h1>
+  <h1>Sprint 2</h1>
+
 <p>grep cut sort du enllaços i relacio entre copies find -mtime</p>
 <p>renice
 nice </p>
@@ -438,20 +449,59 @@ bg - Push the next job in the queue into the background
 bg %[number] - Push the job [number] into the background
 kill %[number] - Kill the job numbered [number]
 kill -[signal] %[number] - Send the signal [signal] to job number [number]
-disown %[nu¡mber] - disown the process(no more terminal will be owner), so command will be alive even after closing the terminal.</p>
+disown %[number] - disown the process(no more terminal will be owner), so command will be alive even after closing the terminal.</p>
 <p>pstree</p>
 <h2 id="gestio-de-procesos">Gestió de Procesos</h2>
 <h3 id="identificacio-de-procesos">Identificació de procesos</h3>
-<p>Per identificar procesos en temps real podem utilitzar la comanda top o htop.
-<img alt="alt text" src="../img/sprint2/top_normal.png" />
-<img alt="alt text" src="../img/sprint2/htop_normal.png" /></p>
-<p>També podem veure els procesos i els fills en forma de arbre amb pstree. Aquesta vegada no es en temps real.
-<img alt="alt text" src="../img/sprint2/pstree_normal.png" /></p>
+<p>Per identificar procesos en temps real podem utilitzar la comanda top o htop.<br>
+<img alt="alt text" src="../img/sprint2/Processos/top_normal.png" />
+<img alt="alt text" src="../img/sprint2/Processos/htop_normal.png" /></p>
+<p>També podem veure els procesos i els fills en forma de arbre amb pstree. Aquesta vegada no es en temps real.<br>
+Utilitzant pstree, podem veure que alguns processos provenen d'altres, aquests processos es diuen procesos fills.<br>
+<img alt="alt text" src="../img/sprint2/Processos/pstree_normal.png" /></p>
 <h3 id="filtratge">Filtratge</h3>
 <p>Per filtrar els procesos amb pstree podem utilitzar -p -h i ajuntar amb grep.<br>
 -p s'utilitza per visualitzar el PID (Process ID) de cada proces.<br>
 -h subralla el procés que estem buscant.<br>
-<img alt="alt text" src="../img/sprint2/pstree_filter.png" /></p>
+<img alt="alt text" src="../img/sprint2/Processos/pstree_filter.png" /></p>
+<h3 id="matar-processos">Matar processos</h3>
+<p>Per matar processos s'utilitza la següent comanda:<br></p>
+<pre>
+<code class="language-terminal">
+(sudo) kill [PID]
+</code>
+</pre>
+
+<p>Aquesta comanda envia una petició per que el programa tanqui.<br>
+A vegades pot no funcionar i s'hauria de forçar amb la següent comanda:<br></p>
+<pre>
+<code class="language-terminal">
+(sudo) kill -9 [PID]
+</code>
+</pre>
+
+<h3 id="treballs">Treballs</h3>
+<p>Quan un proces es pausa utilitzant ctrl + z, es posa en segon pla i es diu treball.<br>
+Es pot canviar l'estat dels treballs amb les seguents comandes:<br></p>
+<pre>
+<code class="language-terminal">
+jobs //Llista els treballs 
+</code>
+</pre>
+
+<p><img alt="alt text" src="../img/sprint2/Processos/jobStopped.png" /></p>
+<p>Al llistar, es mostra el numero del treball ([1]+), l'estat en que es troba (Aturat), i a quina comanda es refereix (top).<br></p>
+<pre>
+<code class="language-terminal">
+fg %[number] //Continua el proces indicat amb el numero de treball.
+</code>
+</pre>
+
+<pre>
+<code class="language-terminal">
+kill %[number] //Mata el proces indicat amb el numero de treball.
+</code>
+</pre>
 
 
 

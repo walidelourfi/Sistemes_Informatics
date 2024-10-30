@@ -6,3 +6,9 @@
 .md-footer-nav__link.md-footer-nav__link--top:hover {
     background-color: #0056b3; /* Color de fondo al pasar el ratón */
 }
+
+.md-footer-nav__link .md-icon {
+    font-size: 20em; /* Ajusta el tamaño según tus necesidades */
+    width: 20em; /* Asegúrate de que el contenedor también se ajuste */
+    height: 20em; /* Asegúrate de que el contenedor también se ajuste */
+}
