@@ -603,13 +603,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#useradd" class="md-nav__link">
-    useradd
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -627,6 +620,47 @@
     Afegir usuaris a un grup
   </a>
   
+    <nav class="md-nav" aria-label="Afegir usuaris a un grup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gpasswd" class="md-nav__link">
+    GPASSWD
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adduser" class="md-nav__link">
+    ADDUSER
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usermod" class="md-nav__link">
+    USERMOD
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eliminar-usuari-dun-grup" class="md-nav__link">
+    Eliminar usuari d'un grup
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#canviar-el-nom-dun-grup" class="md-nav__link">
+    Canviar el nom d'un grup
+  </a>
+  
 </li>
         
           <li class="md-nav__item">
@@ -637,8 +671,22 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#modificar-grup-principal-dun-usuari" class="md-nav__link">
+    Modificar grup principal d'un usuari
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#assignar-contrasenya-a-un-grup" class="md-nav__link">
     Assignar contrasenya a un grup
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#esborrar-contrasenya-de-un-grup" class="md-nav__link">
+    Esborrar contrasenya de un grup
   </a>
   
 </li>
@@ -992,16 +1040,127 @@ Aquesta comanda <b>solament</b> borra el usuari, però no els directoris i altre
 </ul>
 <h3 id="carpetes-de-configuracio-dusuari">Carpetes de configuracio d'usuari</h3>
 <h4 id="skel">skel</h4>
+<p>Aquesta carpeta esta ubicada en /etc/skel/, el contingut dintre de la carpeta sera copiat dintre de la carpeta home de cada usuari del sistema. Qualsevol canvi, s'aplicara a cada usuari nou creat despres del canvi.<br></p>
+<p><img alt="alt text" src="../img/sprint2/usuaris/carpetesConfig/skel.png" /></p>
 <h4 id="profile">.profile</h4>
+<p>Aquest arxiu es un script que s'ubica tant a /etc/skel/ com a totes les carpetes home dels usuaris. Serveix per a configurar les variables de l'entorn de l'usuari al iniciar sessio.<br></p>
+<p><img alt="alt text" src="../img/sprint2/usuaris/carpetesConfig/profile.png" /></p>
 <h4 id="bashrc">.bashrc</h4>
+<p>Aquest arxiu es un script que s'ubica tant a /etc/skel/ com a totes les carpetes home dels usuaris. Serveix per a configurar cada terminal oberta per l'usuari.<br></p>
+<p><img alt="alt text" src="../img/sprint2/usuaris/carpetesConfig/bashrc.png" /></p>
+<p>Com l'arxiu es bastant extes, la imatge sol mostra una petita configuracio de alias.<br></p>
 <h4 id="bash_logout">.bash_logout</h4>
+<p>Aquest arxiu es un script que s'ubica tant a /etc/skel/ com a totes les carpetes home dels usuaris. Aquest script s'executa quan un usuari tanca sessio.<br></p>
+<p><img alt="alt text" src="../img/sprint2/usuaris/carpetesConfig/bashLogout.png" /></p>
 <h4 id="logindefs">login.defs</h4>
+<p>Aquest arxiu s'ubica en /etc/login.defs. Serveix per a configurar les configuracions i politiques per defecte dels usuaris.<br></p>
 <h4 id="adduserconf">adduser.conf</h4>
-<h4 id="useradd">useradd</h4>
+<p>Aquest arxiu s'ubica en /etc/adduser.conf. Serveix per a configurar les configuracions al crear usuaris amb adduser i grups amb addgroup.</p>
 <h3 id="crear-grups">Crear grups</h3>
+<p>Per a crear un grup utilitzarem la seguent comanda:</p>
+<pre>
+<code class="language-terminal">
+(sudo) addgroup [grup]
+</code>
+</pre>
+
+<p><img alt="alt text" src="../img/sprint2/usuaris/grups/addgroup.png" /></p>
 <h3 id="afegir-usuaris-a-un-grup">Afegir usuaris a un grup</h3>
+<p>Hi han tres metodes per afegir un usuari a un grup:<br></p>
+<h4 id="gpasswd">GPASSWD</h4>
+<p>Podem utilitzar la comanda gpasswd:<br></p>
+<pre>
+<code class="language-terminal">
+(sudo) gpasswd -a [user] [group]
+</code>
+</pre>
+
+<p><img alt="alt text" src="../img/sprint2/usuaris/grups/gpasswdAddUser.png" /></p>
+<h4 id="adduser">ADDUSER</h4>
+<p>Podem utilitzar la comanda adduser:<br></p>
+<pre>
+<code class="language-terminal">
+(sudo) adduser [user] [group]
+</code>
+</pre>
+
+<p><img alt="alt text" src="../img/sprint2/usuaris/grups/adduserGroup.png" /></p>
+<h4 id="usermod">USERMOD</h4>
+<p>Podem utilitzar la comanda usermod:<br></p>
+<pre>
+<code class="language-terminal">
+(sudo) usermod -a -G [group] [user]
+</code>
+</pre>
+
+<p><img alt="alt text" src="../img/sprint2/usuaris/grups/usermodAG.png" /></p>
+<h3 id="eliminar-usuari-dun-grup">Eliminar usuari d'un grup</h3>
+<p>Per a eliminar un usuari de un grup utilitzem la seguent comanda, s'ha de tenir delicadesa ja que si no posem el grup, l'usuari sera eliminat:</p>
+<pre>
+<code class="language-terminal">
+(sudo) deluser [user] [group]
+</code>
+</pre>
+
+<p><img alt="alt text" src="../img/sprint2/usuaris/grups/deluserGroup.png" /></p>
+<p>Una altra forma es amb la comanda seguent:</p>
+<pre>
+<code class="language-terminal">
+(sudo) gpasswd -d [user] [group]
+</code>
+</pre>
+
+<p><img alt="alt text" src="../img/sprint2/usuaris/grups/gpasswdDelUser.png" /></p>
+<h3 id="canviar-el-nom-dun-grup">Canviar el nom d'un grup</h3>
+<p>Per canviar el nom del grup, utilitzem la seguent comanda:</p>
+<pre>
+<code class="language-terminal">
+(sudo) groupmod -n [nouNom] [grup]
+</code>
+</pre>
+
+<p><img alt="alt text" src="../img/sprint2/usuaris/grups/groupModNom.png" /></p>
+<p><img alt="alt text" src="../img/sprint2/usuaris/grups/showNewName.png" /></p>
 <h3 id="assignar-administrador-de-un-grup">Assignar administrador de un grup</h3>
+<p>Per posar un usuari com a administrador de un grup, utilitzem la seguent comanda:</p>
+<pre>
+<code class="language-terminal">
+(sudo) gpasswd -A [user] [group]
+</code>
+</pre>
+
+<p><img alt="alt text" src="../img/sprint2/usuaris/grups/gpasswdAdmin.png" /></p>
+<p><img alt="alt text" src="../img/sprint2/usuaris/grups/AdminGshadow.png" /></p>
+<h3 id="modificar-grup-principal-dun-usuari">Modificar grup principal d'un usuari</h3>
+<p>Per posar un nou grup com a principal a un usuari, utilitzem la seguent comanda:</p>
+<pre>
+<code class="language-terminal">
+(sudo) usermod -g [group] [user]
+</code>
+</pre>
+
+<p><img alt="alt text" src="../img/sprint2/usuaris/grups/usermodG.png" /></p>
+<p><img alt="alt text" src="../img/sprint2/usuaris/grups/idProva.png" /></p>
 <h3 id="assignar-contrasenya-a-un-grup">Assignar contrasenya a un grup</h3>
+<p>Per assignar una contrasenya a un grup, escrivim la seguent comanda:</p>
+<pre>
+<code class="language-terminal">
+(sudo) gpasswd [group]
+</code>
+</pre>
+
+<p><img alt="alt text" src="../img/sprint2/usuaris/grups/GpasswdGROUP.png" /></p>
+<p><img alt="alt text" src="../img/sprint2/usuaris/grups/ghsadowPASSWORD.png" /></p>
+<h3 id="esborrar-contrasenya-de-un-grup">Esborrar contrasenya de un grup</h3>
+<p>Per esborrar la contrasenya de un grup, utilitzem la seguent comanda:</p>
+<pre>
+<code class="language-terminal">
+(sudo) gpasswd -r [group]
+</code>
+</pre>
+
+<p><img alt="alt text" src="../img/sprint2/usuaris/grups/gpasswdDELGROUP.png" /></p>
+<p><img alt="alt text" src="../img/sprint2/usuaris/grups/AdminGshadow.png" /></p>
 
 
 
