@@ -1932,27 +1932,31 @@ Per fer-ho, s'utilitza la seguent comanda:</p>
 <h2 id="sistemes-de-fitxers-i-particions">Sistemes de fitxers i particions</h2>
 <h3 id="estructura-de-la-informacio">Estructura de la informació</h3>
 <h4 id="sectors">Sectors</h4>
-<p>Els sectors son la unitat minima física del disc.<br>
-Dintre de cada sector s'emmagatzema l'informacio,  si la informacio ocupa mes que el sector, aquest es parteix i distrbueix entre diferents sectors.<br>
-Aquest es de 512 bytes de mida i no es pot modificar de cap manera.</p>
+<ul>
+<li>Els sectors son la unitat minima física del disc.</li>
+<li>Dintre de cada sector s'emmagatzema l'informacio,  si la informacio ocupa mes que el sector, aquest es parteix i distrbueix entre diferents sectors.</li>
+<li>Aquest es de 512 bytes de mida i no es pot modificar de cap manera.</li>
+</ul>
 <h4 id="blocs">Blocs</h4>
-<p>Els blocs son la unitat minima logica dintre de una particio de un disc en un sistema operatiu.<br>
-Cada bloc esta fet per sectors de la unitat fisica.<br>
-La informacio es guarda en cada bloc, si aquest ocupa mes que el bloc, es redistribueix entre els blocs lliures. Si ocupa menys, es deixa un espai el qual no es pot assignar a cap arxiu.<br>
-Per a cada arxiu o carpeta hi ha un "index" el qual apunta a la direccio de bloc on es localitza, aquest "index" es gestionat per el sistema de arxius.<br> 
-Usualment son de 4096 bytes pero es pot canviar segons les necessitats de la particio.</p>
+<ul>
+<li>Els blocs son la unitat minima logica dintre de una particio de un disc en un sistema operatiu.</li>
+<li>Cada bloc esta fet per sectors de la unitat fisica.</li>
+<li>La informacio es guarda en cada bloc, si aquest ocupa mes que el bloc, es redistribueix entre els blocs lliures. Si ocupa menys, es deixa un espai el qual no es pot assignar a cap arxiu.</li>
+<li>Per a cada arxiu o carpeta hi ha un "index" el qual apunta a la direccio de bloc on es localitza, aquest "index" es gestionat per el sistema de arxius. </li>
+<li>Usualment son de 4096 bytes pero es pot canviar segons les necessitats de la particio.</li>
+</ul>
 <h4 id="fragmentacio-interna">Fragmentació interna</h4>
-<p>La fragmentació interna ocurreix quan la informació no completa el espai del bloc, deixant aixi un espai el qual no es pot ocupar.
-<br><br>
-A petita escala no es ningun problema greu, a gran escala es pot perdre espai el qual es podria aprofitar per assignar mes informacio.
-<br><br>
-Es pot arreglar canviant la mida del bloc a una mida mes ajustada, d'aquesta manera l'espai que es perd es inferior.</p>
+<ul>
+<li>La fragmentació interna ocurreix quan la informació no completa el espai del bloc, deixant aixi un espai el qual no es pot ocupar.</li>
+<li>A petita escala no es ningun problema greu, a gran escala es pot perdre espai el qual es podria aprofitar per assignar mes informacio.</li>
+<li>Es pot arreglar canviant la mida del bloc a una mida mes ajustada, d'aquesta manera l'espai que es perd es inferior.</li>
+</ul>
 <h4 id="fragmentacio-externa">Fragmentació externa</h4>
-<p>La fragmentacio externa ocurreix quan la informacio esta fragmentada entre diferents blocs del sistema.
-<br><br>
-La informacio al estar distribuida de forma no lineal en el disc, es mes dificil i es tarda mes poder utilitzar-lo de qualsevol forma, ja que s'hauria de observar els apuntadors de cada part de l'arxiu.
-<br><br>
-Es pot arreglar formatejant el disc o utilitzant un defragmentador. En Windows esta de forma nativa, en Linux s'hauria d'instalar.</p>
+<ul>
+<li>La fragmentacio externa ocurreix quan la informacio esta fragmentada entre diferents blocs del sistema.</li>
+<li>La informacio al estar distribuida de forma no lineal en el disc, es mes dificil i es tarda mes poder utilitzar-lo de qualsevol forma, ja que s'hauria de observar els apuntadors de cada part de l'arxiu.</li>
+<li>Es pot arreglar formatejant el disc o utilitzant un defragmentador. En Windows esta de forma nativa, en Linux s'hauria d'instalar.</li>
+</ul>
 <h3 id="tipus-de-formateig">Tipus de formateig</h3>
 <h4 id="apuntadors">Apuntadors</h4>
 <p>Com mencionat anteriorment, la informacio esta situada en blocs, els quals esta controlat pel sistema operatiu. En cada bloc (o mes d'un) conte un arxiu, carpeta, etc.
