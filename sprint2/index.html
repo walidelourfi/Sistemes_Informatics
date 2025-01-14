@@ -1209,6 +1209,73 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#automatitzacions" class="md-nav__link">
+    Automatitzacions
+  </a>
+  
+    <nav class="md-nav" aria-label="Automatitzacions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cron" class="md-nav__link">
+    Cron
+  </a>
+  
+    <nav class="md-nav" aria-label="Cron">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#teoria_1" class="md-nav__link">
+    Teoria
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#practica" class="md-nav__link">
+    Practica
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anacron" class="md-nav__link">
+    Anacron
+  </a>
+  
+    <nav class="md-nav" aria-label="Anacron">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#teoria_2" class="md-nav__link">
+    Teoria
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#practica_1" class="md-nav__link">
+    Practica
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2316,6 +2383,116 @@ Per fer un hash, podem utilitzar la seguent comanda:</p>
 </pre>
 
 <p><img alt="alt" src="../img/sprint2/copiesSeguretat/comandes/md5sum.png" /></p>
+<h2 id="automatitzacions">Automatitzacions</h2>
+<p>Les automatitzacions en Linux, es configuren mitjansant dos programes, cron i anacron.
+<br><br>
+Aquests dos programes funcionen quasi de la mateixa forma, es configura un moment del temps (pot ser repetit o no) per a executar un arxiu, normalment un script, o una comanda.
+<br><br>
+En SO antics, els programes estaven separats, actualment funcionen de forma conjunta.</p>
+<h3 id="cron">Cron</h3>
+<h4 id="teoria_1">Teoria</h4>
+<p>S'utilitza quan es vol automatitzar una tasca en una hora determinada i <b>l'ordinador estara engegat</b>.
+<br><br>
+Cron es pot utilitzar de dues formes:
+- Usuari: es pot automatitzar tasques fetes pel propi usuari (incluin els permisos)
+- Super Usuari: s'automatitza les tasques utilitzant el super usuari root.</p>
+<p>Per a automatitzar tasques amb l'usuari connectat, utilitzem la seguent comanda:</p>
+<pre>
+<code class="language-terminal">
+crontab -e -u [usuari]
+</code>
+</pre>
+
+<p>Per a automatitzar tasques amb el super usuari, utilitzem la seguent comanda:</p>
+<pre>
+<code class="language-terminal">
+(sudo) nano etc/crontab
+</code>
+</pre>
+
+<p><br><br></p>
+<p>Per afegir una automatitzacio, afegirem una linea utilitzant la seguent estructura. Si es deixa un apartat amb * significa que ho fara per a cada unitat de temps que representa.</p>
+<pre>
+<code class="language-terminal">
+* * * * * comanda
+| | | | |
+| | | | +--- Día de la setmana (0-7, on 0 y 7 representa el diumenge)
+| | | +----- Mes (1-12)
+| | +------- Día del mes (1-31)
+| +--------- Hora (0-23)
++----------- Minut (0-59)
+</code>
+</pre>
+
+<h4 id="practica">Practica</h4>
+<p>Primer, comensarem escrivint el script per a automatitzar.</p>
+<p><img alt="alt" src="../img/sprint2/automatitzacions/script.png" /></p>
+<p>Afegim permisos d'execucio al script.</p>
+<p><img alt="alt" src="../img/sprint2/automatitzacions/chmodScript.png" /></p>
+<p>Utilitzant la seguent comanda, afegim la linea per a dintre de uns minuts.</p>
+<pre>
+<code class="language-terminal">
+crontab -e -u [usuari]
+</code>
+</pre>
+
+<p><img alt="alt" src="../img/sprint2/automatitzacions/cron.png" /></p>
+<p>El script crea un arxiu comprimit en l'escriptori, l'ordinador al estar obert i arribar la hora i els minuts especificats, es crea el comprimit.</p>
+<p><img alt="alt" src="../img/sprint2/automatitzacions/comprimit.png" /></p>
+<h3 id="anacron">Anacron</h3>
+<h4 id="teoria_2">Teoria</h4>
+<p>S'utilitza quan es vol automatitzar una tasca i l'ordinador <b>pot o no estar engegat</b>.
+<br><br>
+Si l'ordinador esta apagat, quan s'engegui executara les tasques pendents.</p>
+<p>Anacron es modifica utilitzant la seguent comanda:</p>
+<pre>
+<code class="language-terminal">
+(sudo) nano /etc/anacrontab
+</code>
+</pre>
+
+<p>I s'estructura de la seguent forma:</p>
+<pre>
+<code class="language-terminal">
+1       5       cron.daily      run-parts /etc/cron.daily
+</code>
+</pre>
+
+<ul>
+<li>Frequencia: frequencia d'execucio en dies</li>
+<li>Atrasament: temps en minuts abans de iniciar una comanda.</li>
+<li>Identificador: nom unic de la tasca mostrada als logs</li>
+<li>Comanda: comanda a executar, per defecte executa tots els arxius dintre de la carpeta mostrada.</li>
+</ul>
+<h4 id="practica_1">Practica</h4>
+<p>Per a executar el script creat en la practica de cron diariament, pero afegint les caracteristiques de anacron, afegirem el script dintre de la seguent carpeta pero sense el .sh:</p>
+<pre>
+<code class="language-terminal">
+/etc/cron.daily
+</code>
+</pre>
+
+<p><img alt="alt" src="../img/sprint2/automatitzacions/copiasinsh.png" /></p>
+<p>A diferencia del script creat en la practica anterior, no es poden utilitzar variables del sistema dintre del script.</p>
+<p><img alt="alt" src="../img/sprint2/automatitzacions/scriptCanviat.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Es important recalcar que si el script tambe s'executa en cron pot donar problemes.</p>
+</div>
+<p>Seguidament, modificarem el atrasament del anacron modificant les seguents linees:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Aquest pas es pot obviar, ja que modifiquem el atrasament per a fer la practica mes agil.</p>
+</div>
+<pre>
+<code class="language-terminal">
+(sudo) nano /etc/anacrontab
+</code>
+</pre>
+
+<p><img alt="alt" src="../img/sprint2/automatitzacions/anacrontab.png" /></p>
+<p>Al reiniciar l'ordinador i esperar el temps, l'arxiu s'executara de forma satisfactoria.</p>
+<p><img alt="alt" src="../img/sprint2/automatitzacions/anacrontabCopia.png" /></p>
 
 
 
