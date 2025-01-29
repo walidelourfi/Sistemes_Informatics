@@ -533,6 +533,99 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#comandes-varies" class="md-nav__link">
+    Comandes varies
+  </a>
+  
+    <nav class="md-nav" aria-label="Comandes varies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cerca" class="md-nav__link">
+    Cerca
+  </a>
+  
+    <nav class="md-nav" aria-label="Cerca">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exemples" class="md-nav__link">
+    Exemples
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#afegir" class="md-nav__link">
+    Afegir
+  </a>
+  
+    <nav class="md-nav" aria-label="Afegir">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exemples_1" class="md-nav__link">
+    Exemples
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eliminar" class="md-nav__link">
+    Eliminar
+  </a>
+  
+    <nav class="md-nav" aria-label="Eliminar">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exemples_2" class="md-nav__link">
+    Exemples
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modificar" class="md-nav__link">
+    Modificar
+  </a>
+  
+    <nav class="md-nav" aria-label="Modificar">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exemples_3" class="md-nav__link">
+    Exemples
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -876,6 +969,315 @@ Per fer-ho utilitzem la seguent comanda i filtrem pels usuaris del domini:</p>
 <p>Acceptem i seleccionem la encriptacio md5 per a les contrasenyes:</p>
 <p><img alt="alt text" src="../img/sprint3/unirEquip/accept.png" /></p>
 <p><img alt="alt text" src="../img/sprint3/unirEquip/encrypt.png" /></p>
+<h3 id="comandes-varies">Comandes varies</h3>
+<h4 id="cerca">Cerca</h4>
+<p>Per cercar dintre del registres de LDAP amb el client, utilitzem la seguent comanda:</p>
+<pre>
+<code class="language-terminal">
+ldapsearch -xLLL -b "dc=[nom domini],dc=[nom domini]" [opcions de cerca]
+</code>
+</pre>
+
+<p>Les opcions especificades indiquen el seguent:</p>
+<ul>
+<li>x: utilitza l'autentificacio simple en canvi de SASL</li>
+<li>LLL: formateja la sortida de la informacio a una mes neta i entenedora</li>
+<li>b: indica la base de busqueda, en aquest cas el nostre domini</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Si al fer la cerca surt un error de mala conexio com aquest:
+<pre>
+<code class="language-terminal">
+ldap_sasl_bind(SIMPLE): Can't contact LDAP server (-1)
+</code>
+</pre>
+Es pot solucionar afegint el seguent parametre a la comanda anterior:
+<pre>
+<code class="language-terminal">
+ldapsearch -xLLL -H [ip del servidor domini]:389 -b "dc=[nom domini],dc=[nom domini]" [opcions de cerca]
+</code>
+</pre></p>
+</div>
+<h5 id="exemples">Exemples</h5>
+<p>Cercar quants UO hi han, el numero donat s'ha de dividir entre 2:</p>
+<p><img alt="alt text" src="../img/sprint3/cercaLDAP/searchOU.png" /></p>
+<pre>
+<code class="language-terminal">
+ldapsearch -xLLL -b "dc=[nom domini],dc=[nom domini]" ou | wc -l
+</code>
+</pre>
+
+<p>Cercar quants usuaris hi han, el numero donat s'ha de dividir entre 2:</p>
+<p><img alt="alt text" src="../img/sprint3/cercaLDAP/searchPersons.png" /></p>
+<pre>
+<code class="language-terminal">
+ldapsearch -xLLL -b "dc=[nom domini],dc=[nom domini]" objectClass=person | wc -l
+</code>
+</pre>
+
+<p>En quins grups esta l'usuari kvaughan:</p>
+<p><img alt="alt text" src="../img/sprint3/cercaLDAP/buscarGrupsK.png" /></p>
+<pre>
+<code class="language-terminal">
+ldapsearch -xLLL -b "dc=[nom domini],dc=[nom domini]" "(&(objectClass=groupOfUniqueNames)(uniquemember=uid=kvaughan,ou=People,dc=[nom domini],dc=[nom domini]))" cn
+</code>
+</pre>
+
+<p>Quants grups esta l'usuari kvaughan, el numero donat s'ha de dividir entre 3:</p>
+<p><img alt="alt text" src="../img/sprint3/cercaLDAP/numGrupsK.png" /></p>
+<pre>
+<code class="language-terminal">
+ldapsearch -xLLL -b "dc=[nom domini],dc=[nom domini]" "(&(objectClass=groupOfUniqueNames)(uniquemember=uid=kvaughan,ou=People,dc=[nom domini],dc=[nom domini]))" cn | wc -l
+</code>
+</pre>
+
+<p>Quants grups hi han dintre de la UO Groups, el numero donat s'ha de dividir entre 2 i restar  1:</p>
+<p><img alt="alt text" src="../img/sprint3/cercaLDAP/quantsGrupsGroups.png" /></p>
+<pre>
+<code class="language-terminal">
+ldapsearch -xLLL -H ldap:// 10.0.2.15 -b "ou=Groups,dc=[nom domini],dc=[nom domini]" dn | wc -l
+</code>
+</pre>
+
+<p>Mostrar tots els usuaris de la UO People que comencin per k i tambe estiguin dintre de la UO Human Resources:</p>
+<p><img alt="alt text" src="../img/sprint3/cercaLDAP/buscaK.png" /></p>
+<pre>
+<code class="language-terminal">
+ldapsearch -x -LLL -b "ou=People,dc=[nom domini],dc=[nom domini]" "(&(uid=k*)(ou=Human Resources))" dn
+</code>
+</pre>
+
+<p>Mostrar numero total d'usuaris amb uidNumber entre 1010 i 1030, el numero donat s'ha de dividir entre 2:</p>
+<p><img alt="alt text" src="../img/sprint3/cercaLDAP/uidNumberTotal.png" /></p>
+<pre>
+<code class="language-terminal">
+ldapsearch -x -LLL -b "dc=[nom domini],dc=[nom domini]" "(&(uidNumber>=1010)(uidNumber<=1030))" dn | wc -l
+</code>
+</pre>
+
+<p>Mostrar numero total d'usuaris on el seu telefon acabi en 2 o el seu cognom en una n, el numero donat s'ha de dividir entre 2:</p>
+<p><img alt="alt text" src="../img/sprint3/cercaLDAP/telephoneTotal.png" /></p>
+<pre>
+<code class="language-terminal">
+ldapsearch -x -LLL -b "dc=[nom domini],dc=[nom domini]" "(|(telephoneNumber=*2)(sn=*n))" dn | wc -l
+</code>
+</pre>
+
+<h4 id="afegir">Afegir</h4>
+<p>Per afegir registres al domini LDAP desde un client tenim dues formes de fer-ho:</p>
+<ul>
+<li>Afegir a partir d'un fitxer ldif convencional</li>
+<li>Afegir a partir d'un ldif utilitzant la comanda de modificacio</li>
+</ul>
+<p>Per afegir el registre de forma ordinaria, utilitzem la seguent comanda:</p>
+<pre>
+<code class="language-terminal">
+ldapadd -x -D "cn=[usuari administrador],dc=[nom de domini],dc=[nom de domini]" -W -f [fitxer.ldif]
+</code>
+</pre>
+
+<p>Les opcions especificades indiquen el seguent:</p>
+<ul>
+<li>x: utilitza l'autentificacio simple en canvi de la SASL</li>
+<li>D: especifica el usuari i domini el qual es realitza l'accio</li>
+<li>W: demana la contrasenya de forma interactiva </li>
+<li>f: especifica l'arxiu ldif</li>
+</ul>
+<p>Per afegir un usuari a partir de la comanda de modificacio, primer haurem de configurar l'arxiu ldif d'aquesta forma:</p>
+<pre>
+<code class="language-terminal">
+dn: [dn]
+changetype: add
+...
+</code>
+</pre>
+
+<p>Per aplicar l'arxiu, utilitzem la seguent comanda:</p>
+<pre>
+<code class="language-terminal">
+ldapmodify -x -D "cn=[usuari administrador],dc=[nom de domini],dc=[nom de domini]" -W -f [fitxer.ldif]
+</code>
+</pre>
+
+<p>Les opcions especificades indiquen el mateix que la comanda anterior.</p>
+<h5 id="exemples_1">Exemples</h5>
+<p>Afegir una UO amb el nom de asix:</p>
+<p>Escrivim els atributs de la UO asix en el arxiu ldif.</p>
+<p><img alt="alt text" src="../img/sprint3/afegirLDAP/asixADD.png" /></p>
+<p>Apliquem la comanda ldapadd per afegir el UO
+<img alt="alt text" src="../img/sprint3/afegirLDAP/asixComandADD.png" /></p>
+<p>Comprovem que s'ha afegit correctament.</p>
+<p><img alt="alt text" src="../img/sprint3/afegirLDAP/comprovacioASIXadd.png" /></p>
+<p>Afegir un usuari amb informacio adicional:</p>
+<p>Afegim l'usuari amb tota la informacio dintre  del arxiu ldif.
+En aquest cas la informacio adicional es:
+- facsimileTelephoneNumber
+- telephoneNumber
+- mail
+<img alt="alt text" src="../img/sprint3/afegirLDAP/walidLDIF.png" /></p>
+<p>Apliquem la configuracio amb la comanda.
+<img alt="alt text" src="../img/sprint3/afegirLDAP/walidADD.png" /></p>
+<p>Comprovem que s'ha afegit correctament.</p>
+<p><img alt="alt text" src="../img/sprint3/afegirLDAP/walidComprovacio.png" /></p>
+<p>Afegir un grup amb usuaris:</p>
+<p>Creem el ldif amb el nou usuari i els membres que contindra.</p>
+<p><img alt="alt text" src="../img/sprint3/afegirLDAP/newGroup.png" /></p>
+<p>Afegim el nou grup.</p>
+<p><img alt="alt text" src="../img/sprint3/afegirLDAP/newGroupAdd.png" /></p>
+<p>Comprovem que el grup s'ha afegit de forma correcta.</p>
+<p><img alt="alt text" src="../img/sprint3/afegirLDAP/comprovacioNewGroup.png" /></p>
+<h4 id="eliminar">Eliminar</h4>
+<p>Per eliminar registres de LDAP hi han dues formes:</p>
+<ul>
+<li>Eliminar amb una comanda</li>
+<li>Eliminar utilitzant un arxiu ldif i la comanda de modificacio</li>
+</ul>
+<p>Per a eliminar el registre amb una comanda:</p>
+<pre>
+<code class="language-terminal">
+ldapdelete -x -D "cn=[usuari administrador],dc=[nom domini],dc=[nom domini]" -W "[dn del registre]"
+</code>
+</pre>
+
+<p>Per a eliminar el registre amb un arxiu, escrivim el seguent en l'arxiu:</p>
+<pre>
+<code class="language-terminal">
+dn: [dn del registre]
+changetype: delete
+</code>
+</pre>
+
+<p>I utilitzem la seguent comanda:</p>
+<pre>
+<code class="language-terminal">
+ldapmodify -x -D "cn=[usuari admin],dc=[nom domini],dc=[nom domini]" -W -f [arxiu.ldif]
+</code>
+</pre>
+
+<h5 id="exemples_2">Exemples</h5>
+<p>Eliminar la UO People:</p>
+<h4 id="modificar">Modificar</h4>
+<p>Hi han 4 caracteristiques dels registres que es poden modificar:</p>
+<ul>
+<li>Afegint atributs</li>
+<li>Canviant atributs</li>
+<li>Eliminant atributs</li>
+<li>Canviant el dn</li>
+</ul>
+<p>La comanda, que val per a totes les modificacions, es la seguent:</p>
+<pre>
+<code class="language-terminal">
+ldapmodify -x -D "cn=[usuari admin],dc=[nom domini],dc=[nom domini]" -W -f [arxiu.ldif]
+</code>
+</pre>
+
+<p>Per fer-ho necesitem un arxiu .ldif amb la seguent estructura:</p>
+<pre>
+<code class="language-terminal">
+dn: [dn del registre]
+changetype: modify
+...
+</code>
+</pre>
+
+<p>Per a afegir atributs, afegim les seguents linees al arxiu:</p>
+<pre>
+<code class="language-terminal">
+add: [atribut]
+[atribut]: [especificacions del atribut]
+</code>
+</pre>
+
+<p>Per modificar atributs, afegim les seguents linees al arxiu:</p>
+<pre>
+<code class="language-terminal">
+replace: [atribut]
+[atribut]: [especificacions del atribut]
+</code>
+</pre>
+
+<p>Per eliminar atributs, afegim les seguents linees al arxiu:</p>
+<pre>
+<code class="language-terminal">
+delete: [atribut]
+</code>
+</pre>
+
+<p>Per modificar el dn, utilitzem la seguent estructura:</p>
+<pre>
+<code class="language-terminal">
+dn: [dn del registre]
+changetype: modrdn
+...
+</code>
+</pre>
+
+<p>Per modificar solament el cn, afegim les seguents linees al arxiu:</p>
+<pre>
+<code class="language-terminal">
+newrdn: cn=[nou cn]
+deleteoldrdn: 1
+</code>
+</pre>
+
+<p>Si tambe volem modificar el UO o domini, afegim les seguents linees al arxiu:</p>
+<pre>
+<code class="language-terminal">
+newsuperior: [nou ou o domini]
+</code>
+</pre>
+
+<h5 id="exemples_3">Exemples</h5>
+<p>Eliminar els atributs roomnumber i homeDirectory del usuari ejohnoson:</p>
+<p>Afegim els atributs a eliminar en el arxiu ldif.</p>
+<p><img alt="alt text" src="../img/sprint3/modificarLDAP/deleteJOHNSONAttr.png" /></p>
+<p>Utilitzem la comanda ldapmodify per aplicar la modifiacio.</p>
+<p><img alt="alt text" src="../img/sprint3/modificarLDAP/modifyCommandJOHNSON.png" /></p>
+<p>Comprovem que s'han eliminat els atributs.</p>
+<p><img alt="alt text" src="../img/sprint3/modificarLDAP/attrJohnson.png" /></p>
+<p>Canviar 3 usuaris de People a ASIX:</p>
+<p>Afegim els usuaris que volem canviar de UO dintre del arxiu ldif.</p>
+<p><img alt="alt text" src="../img/sprint3/modificarLDAP/ldifChangeUO.png" /></p>
+<p>Apliquem la comanda.</p>
+<p><img alt="alt text" src="../img/sprint3/modificarLDAP/modifyChangeUO.png" /></p>
+<p>Comprovem que estan dintre del UO de asix.</p>
+<p><img alt="alt text" src="../img/sprint3/modificarLDAP/comprovaCanviOU.png" /></p>
+<p>Modificar el uid de hmiller a hamiller:</p>
+<p>Afegim el nou uid que volem ficar al usuari en un arxiu ldif.</p>
+<p><img alt="alt text" src="../img/sprint3/modificarLDAP/ldifHAMILLER.png" /></p>
+<p>Apliquem la comanda.</p>
+<p><img alt="alt text" src="../img/sprint3/modificarLDAP/modifyHAMILLER.png" /></p>
+<p>Comprovem que s'ha modificat el uid.</p>
+<p><img alt="alt text" src="../img/sprint3/modificarLDAP/comprovacioHAMILLER.png" /></p>
+<p>Afegir dos atributs mes al usuari walid:</p>
+<p>Afegim els atributs gecos i description.</p>
+<p><img alt="alt text" src="../img/sprint3/modificarLDAP/walidModify.png" /></p>
+<p>Apliquem els canvis amb la comanda.</p>
+<p><img alt="alt text" src="../img/sprint3/modificarLDAP/walidAplicada.png" /></p>
+<p>Comprovem que els canvis s'han realitzat.</p>
+<p><img alt="alt text" src="../img/sprint3/modificarLDAP/comprovarWalid.png" /></p>
+<p>Modificar el correu de jburrell:</p>
+<p>Reemplacem el antic correu amb el nou utilitzant el replace.
+<img alt="alt text" src="../img/sprint3/modificarLDAP/jburrellLDIF.png" /></p>
+<p>Apliquem els canvis.</p>
+<p><img alt="alt text" src="../img/sprint3/modificarLDAP/jburrellModify.png" /></p>
+<p>Comprovem que els canvis s'han realitzat correctament.</p>
+<p><img alt="alt text" src="../img/sprint3/modificarLDAP/comprovacioJBURRELL.png" /></p>
+<p>Treure a un membre de un grup:</p>
+<p>Eliminem el usuari amb el delete.</p>
+<p><img alt="alt text" src="../img/sprint3/modificarLDAP/quitarUser.png" /></p>
+<p>Apliquem el canvi.</p>
+<p><img alt="alt text" src="../img/sprint3/modificarLDAP/quitarAplicada.png" /></p>
+<p>Comprovem que l'usuari s'ha tret del grup.</p>
+<p><img alt="alt text" src="../img/sprint3/modificarLDAP/quitarSearch.png" /></p>
+<p>Esborrar un atribut, afegir un altre i modificar un tercer d'un usuari:</p>
+<p>Afegim l'atribut, eliminem un altre i modifiquem el tercer dintre del arxiu ldif.</p>
+<p><img alt="alt text" src="../img/sprint3/modificarLDAP/Final.png" /></p>
+<p>Apliquem els canvis.</p>
+<p><img alt="alt text" src="../img/sprint3/modificarLDAP/FinalModi.png" /></p>
+<p>Comprovem que els canvis s'han realitzat correctament.</p>
+<p><img alt="alt text" src="../img/sprint3/modificarLDAP/FinalComprovacio.png" /></p>
 
 
 
