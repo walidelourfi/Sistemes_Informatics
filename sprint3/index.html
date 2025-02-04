@@ -626,6 +626,67 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#entorn-grafic" class="md-nav__link">
+    Entorn Grafic
+  </a>
+  
+    <nav class="md-nav" aria-label="Entorn Grafic">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instalacio" class="md-nav__link">
+    Instalacio
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuracio" class="md-nav__link">
+    Configuracio
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#afegir-registres" class="md-nav__link">
+    Afegir Registres
+  </a>
+  
+    <nav class="md-nav" aria-label="Afegir Registres">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#des-de-0" class="md-nav__link">
+    Des de 0
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utilitzant-plantilles" class="md-nav__link">
+    Utilitzant plantilles
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comprovacions_1" class="md-nav__link">
+    Comprovacions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1258,7 +1319,7 @@ newsuperior: [nou ou o domini]
 <p>Comprovem que els canvis s'han realitzat.</p>
 <p><img alt="alt text" src="../img/sprint3/modificarLDAP/comprovarWalid.png" /></p>
 <p>Modificar el correu de jburrell:</p>
-<p>Reemplacem el antic correu amb el nou utilitzant el replace.
+<p>Reemplacem el antic correu amb el nou utilitzant el replace.<br>
 <img alt="alt text" src="../img/sprint3/modificarLDAP/jburrellLDIF.png" /></p>
 <p>Apliquem els canvis.</p>
 <p><img alt="alt text" src="../img/sprint3/modificarLDAP/jburrellModify.png" /></p>
@@ -1278,6 +1339,87 @@ newsuperior: [nou ou o domini]
 <p><img alt="alt text" src="../img/sprint3/modificarLDAP/FinalModi.png" /></p>
 <p>Comprovem que els canvis s'han realitzat correctament.</p>
 <p><img alt="alt text" src="../img/sprint3/modificarLDAP/FinalComprovacio.png" /></p>
+<h3 id="entorn-grafic">Entorn Grafic</h3>
+<p>En el client LDAP es poden instalar entorns grafics per a facilitar la gestio d'aquest, els mes populars son:</p>
+<ul>
+<li>Apache Directory Studio</li>
+<li>JXplorer</li>
+<li>Phpldapadmin</li>
+<li>LDAP Account Manager</li>
+</ul>
+<p>En aquesta documentacio, utilitzarem <b>Apache Directory Studio</b></p>
+<h4 id="instalacio">Instalacio</h4>
+<p>Per instalar Apache Directory Studio, haurem d'entrar al seguent <a href="https://directory.apache.org/studio/">enllaç</a> i descargar el paquet.</p>
+<p><img alt="alt text" src="../img/sprint3/Grafics/Instalar/linkInstall.png" /></p>
+<p>Escollim el SO, en aquest cas Linux.</p>
+<p><img alt="alt text" src="../img/sprint3/Grafics/Instalar/SOinstall.png" /></p>
+<p>Cliquem el enllaç i ens descargara el paquet.</p>
+<p><img alt="alt text" src="../img/sprint3/Grafics/Instalar/mirrorLinkInstall.png" /></p>
+<p>Extraem el paquet, en aquest cas en l'entorn grafic.</p>
+<p><img alt="alt text" src="../img/sprint3/Grafics/Instalar/extractPackage.png" /></p>
+<p>En la propia carpeta creada, es trobara el ApacheStudio, el qual si l'executem s'inicia el programa.</p>
+<p><img alt="alt text" src="../img/sprint3/Grafics/Instalar/runApache.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>La majoria d'errors al iniciar el Apache Studio es la falta del JVE (Java Virtual Envoirenment) i/o JDK (Java Developer Kit), els podem instalar amb les seguents comandes:
+<pre>
+<code class="language-terminal">
+(sudo) apt install default-jve
+(sudo)apt install default-jdk
+</code>
+</pre></p>
+</div>
+<h4 id="configuracio">Configuracio</h4>
+<p>Dintre del Apache Studio, en l'apartat LDAP cliquem a una nova conexió.</p>
+<p><img alt="alt text" src="../img/sprint3/Grafics/Configuracio/newConnection.png" /></p>
+<p>En els primers parametres posem el nom que volem a la conexio i la IP del servidor domini.</p>
+<p><img alt="alt text" src="../img/sprint3/Grafics/Configuracio/newParametres.png" /></p>
+<p>Seguidament, escollim l'autentificacio simple i escrivim el administrador i domini que volem connectar-nos juntament amb la contrasenya del administrador.</p>
+<p><img alt="alt text" src="../img/sprint3/Grafics/Configuracio/auth.png" /></p>
+<p>Una vegada autenticats, podem escollir el domini LDAP en la part inferior esquerra.</p>
+<p><img alt="alt text" src="../img/sprint3/Grafics/Configuracio/inici.png" /></p>
+<p>En l'apartat DIT, podem veure l'estructura del LDAP de forma senzilla.</p>
+<p><img alt="alt text" src="../img/sprint3/Grafics/Configuracio/structure.png" /></p>
+<p>Si escollim algun registre, en la part dreta es mostrara les caracteristiques d'aquest.</p>
+<p><img alt="alt text" src="../img/sprint3/Grafics/Configuracio/char.png" /></p>
+<h4 id="afegir-registres">Afegir Registres</h4>
+<h5 id="des-de-0">Des de 0</h5>
+<p>Per afegir un nou registre, fem click dret al grup o estructura que serà part -&gt; new entry.</p>
+<p><img alt="alt text" src="../img/sprint3/Grafics/AfegirRegistres/newEntry.png" /></p>
+<p>Afegirem la entrada de forma manual.</p>
+<p><img alt="alt text" src="../img/sprint3/Grafics/AfegirRegistres/fromScratch.png" /></p>
+<p>En aquest apartat, posem els object class del registre. En aquest cas es un grup.</p>
+<p><img alt="alt text" src="../img/sprint3/Grafics/AfegirRegistres/objectClass.png" /></p>
+<p>En aquest apartat, afegim o eliminem els RDS necessaris, en aquest cas solament necessitem el cn.</p>
+<p><img alt="alt text" src="../img/sprint3/Grafics/AfegirRegistres/chars.png" /></p>
+<p>Com tots els grups necessiten un gidNumber (i al ser l'unic atribut afegit) haurem d'assignar-lo.</p>
+<p><img alt="alt text" src="../img/sprint3/Grafics/AfegirRegistres/gidNumberAttr.png" /></p>
+<p>Finalment, podem veure els atributs del registre i modificar-los segons el convenient.</p>
+<p><img alt="alt text" src="../img/sprint3/Grafics/AfegirRegistres/allAttr.png" /></p>
+<p>Finalment, podem veure que el registre s'ha afegit de forma satisfactoria.</p>
+<p><img alt="alt text" src="../img/sprint3/Grafics/AfegirRegistres/finnish.png" /></p>
+<h5 id="utilitzant-plantilles">Utilitzant plantilles</h5>
+<p>Per afegir registres utilitzant plantilles, creem una nova entrada però utilitzant una entrada existent com a plantilla.</p>
+<p><img alt="alt text" src="../img/sprint3/Grafics/templateRegister/inici.png" /></p>
+<p>Escollim la entrada per a utilitzar-la com a plantilla.</p>
+<p><img alt="alt text" src="../img/sprint3/Grafics/templateRegister/enricTemplate.png" /></p>
+<p>Al ser iguals, no fa falta canviar els object class. En altres casos podria ser necessaris.</p>
+<p><img alt="alt text" src="../img/sprint3/Grafics/templateRegister/objectClass.png" /></p>
+<p>Canviem el cn del registre al nou</p>
+<p><img alt="alt text" src="../img/sprint3/Grafics/templateRegister/cn.png" /></p>
+<p>I canviem els atributs convenients al nou registre.</p>
+<p><img alt="alt text" src="../img/sprint3/Grafics/templateRegister/attr.png" /></p>
+<p>Finalment, podem veure que el registre s'ha afegit de forma satisfactoria.</p>
+<p><img alt="alt text" src="../img/sprint3/Grafics/templateRegister/finnish.png" /></p>
+<h4 id="comprovacions_1">Comprovacions</h4>
+<p>Per a fer les comprovacions, s'ha creat un usuari kike.</p>
+<p><img alt="alt text" src="../img/sprint3/Grafics/Comprovacions/kike.png" /></p>
+<p>A la maquina client, entrem amb un nou usuari, en aquest cas Kike.
+<br>
+Com podem veure, s'ha autenticat de forma satisfactoria ja que s'esta creant la seva carpeta d'usuari.</p>
+<p><img alt="alt text" src="../img/sprint3/Grafics/Comprovacions/creatingKike.png" /></p>
+<p>Finalment, hem autenticat a Kike de forma grafica. </p>
+<p><img alt="alt text" src="../img/sprint3/Grafics/Comprovacions/mostrarKike.png" /></p>
 
 
 
