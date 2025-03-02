@@ -692,6 +692,120 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#comparticio-de-recursos" class="md-nav__link">
+    Comparticio de recursos
+  </a>
+  
+    <nav class="md-nav" aria-label="Comparticio de recursos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nfs" class="md-nav__link">
+    NFS
+  </a>
+  
+    <nav class="md-nav" aria-label="NFS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuracio-servidor" class="md-nav__link">
+    Configuracio servidor
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuracio-clients" class="md-nav__link">
+    Configuracio Clients
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuracio Clients">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#windows" class="md-nav__link">
+    Windows
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ubuntu" class="md-nav__link">
+    Ubuntu
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#samba" class="md-nav__link">
+    Samba
+  </a>
+  
+    <nav class="md-nav" aria-label="Samba">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuracio-servidor_1" class="md-nav__link">
+    Configuracio Servidor
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuracio-clients_1" class="md-nav__link">
+    Configuracio Clients
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ldap_1" class="md-nav__link">
+    LDAP
+  </a>
+  
+    <nav class="md-nav" aria-label="LDAP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuracio-servidor_2" class="md-nav__link">
+    Configuracio Servidor
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuracio-clients_2" class="md-nav__link">
+    Configuracio Clients
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1420,6 +1534,248 @@ Com podem veure, s'ha autenticat de forma satisfactoria ja que s'esta creant la 
 <p><img alt="alt text" src="../img/sprint3/Grafics/Comprovacions/creatingKike.png" /></p>
 <p>Finalment, hem autenticat a Kike de forma grafica. </p>
 <p><img alt="alt text" src="../img/sprint3/Grafics/Comprovacions/mostrarKike.png" /></p>
+<h2 id="comparticio-de-recursos">Comparticio de recursos</h2>
+<h3 id="nfs">NFS</h3>
+<p>NFS (Network File System) es un protocol que permet compartir carpetes i fitxers per la xarxa.
+<br><br>
+NFS comparteix recursos per <b>host</b>. Es pot autenticar mitjansant usuaris pero s'hauria d'utilitzar juntament amb Kerberos</p>
+<h4 id="configuracio-servidor">Configuracio servidor</h4>
+<p>En el servidor, instalarem el paquet necessari, el qual es el seguent:</p>
+<pre>
+<code class="language-terminal">
+(sudo) apt install nfs-kernel-server
+</code>
+</pre>
+
+<p><img alt="alt text" src="../img/sprint3/NFS/kernel-server-Install.png" /></p>
+<p>Creem la carpeta el qual es compartira. Per no tindre problemes amb permisos, de moment el propietari de la carpeta es ningu i amb tots els permisos a tothom.</p>
+<p><img alt="alt text" src="../img/sprint3/NFS/creacioCarpeta.png" /></p>
+<p>Seguidament, en el fitxer /etc/exports afegim les seguents linees:</p>
+<pre>
+<code class="language-terminal">
+[carpeta a compartir] [xarxa]([permisos],[sincronitzacio],[seguretat],[rendiment])
+</code>
+</pre>
+
+<p>Les opcions a ficar son les seguents:</p>
+<ul>
+<li>Xarxa: es pot indicar la xarxa que pot accedir. (*) indica totes les xarxes, es pot ficar IPs d'equips individuals (192.168.2.24) o xarxes (192.168.2.0/24).</li>
+<li>Permisos: es posen els permisos de la carpeta han de estar alineats amb els del sistema. (ro) indica solament lectura. (rw) indica lectura i escriptura.</li>
+<li>Sincronitzacio: indica quina sincronitzacio amb el servidor dona. (sync) escriu al disc del servidor i despres respon. (async) respon i despres escriu al disc del servidor.</li>
+<li>Seguretat: s'indica la seguretat a la carpeta. (root_squash) indica que el root dels clients son usuaris no privilegiats a la carpeta. (no_root_squash) permet que el root del client tingui privilegis a la carpeta. (all_squash) mapeja tots els usuaris com a nobody nogroup.</li>
+<li>Rendiment: indica el rendiment en el subdirectoris. (no_subtree_check) no verifica permisos dels subdirectoris. (subtree_check) verifica els permisos dels subdirectoris.</li>
+</ul>
+<p><img alt="alt text" src="../img/sprint3/NFS/exportsServer.png" /></p>
+<p>Finalment, reiniciem el servei amb la seguent comanda:</p>
+<pre>
+<code class="language-terminal">
+(sudo) systemctl restart nfs-kernel-server
+</code>
+</pre>
+
+<h4 id="configuracio-clients">Configuracio Clients</h4>
+<h5 id="windows">Windows</h5>
+<p>En Windows, anem al panel de control -&gt; Programes i Caracteristiques. I activem una caracteristica de Windows.</p>
+<p><img alt="alt text" src="../img/sprint3/NFS/windowsAddChar.png" /></p>
+<p>Afegim la caracteristica "Serveis per a NFS".</p>
+<p><img alt="alt text" src="../img/sprint3/NFS/addNFSClient.png" /></p>
+<p>Finalment, si busquem per la xarxa (per exemple ficant la direccio IP del servidor a la barra de busqueda de fitxers) podrem accedir a la carpeta compartida.</p>
+<p><img alt="alt text" src="../img/sprint3/NFS/enteredCompartidaWindows.png" /></p>
+<p>Podem comprovar que dintre de la carpeta compartida podem crear fitxers, en aquest cas s'ha creat un fitxer anomenat Wiindows.txt.</p>
+<p><img alt="alt text" src="../img/sprint3/NFS/windowsComprovacio.png" /></p>
+<h5 id="ubuntu">Ubuntu</h5>
+<p>Primer, instalem el paquet necessari, el qual es el seguent:</p>
+<pre>
+<code class="language-terminal">
+(sudo) apt install nfs-common rpcbind
+</code>
+</pre>
+
+<p><img alt="alt text" src="../img/sprint3/NFS/clientInstall.png" /></p>
+<p>Seguidament creem una carpeta el qual apuntara a la carpeta compartida.<br>
+Li fiquem los mateixos permisos que la compartida i la montem amb mount.<br>
+En aquest cas al montar s'haura de posar la direccio IP i ruta de la carpeta.<br></p>
+<pre>
+<code class="language-terminal">
+(sudo) mount [IP]:[ruta carpeta] [carpeta local]
+</code>
+</pre>
+
+<p><img alt="alt text" src="../img/sprint3/NFS/ubuntuAdd.png" /></p>
+<p>Finalment, podem comprovar que el client Ubuntu pot accedir i crear fitxers en la carpeta compartida, en aquest cas a creat un fitxer anoment clientUbuntu.</p>
+<p><img alt="alt text" src="../img/sprint3/NFS/ubuntuComprovacio.png" /></p>
+<h3 id="samba">Samba</h3>
+<p>Samba comparteix recursos per <b>usuari</b> que s'ha de autenticar. Es pot configurar juntament amb LDAP.
+<br><br>
+Els usuaris que no estiguin creats dintre de Samba no poden accedir ni autenticar-se.
+<br><br>
+Tambe permet la comparticio de mes recursos a part de carpetes i fitxers, com per exemple impresores.</p>
+<h4 id="configuracio-servidor_1">Configuracio Servidor</h4>
+<p>Primer de tot, instalarem els paquets necessaris amb la seguent comanda:</p>
+<pre>
+<code class="language-terminal">
+(sudo) apt install samba
+</code>
+</pre>
+
+<p><img alt="alt text" src="../img/sprint3/samba/sambaInstall.png" /></p>
+<p>Seguidament, creem una carpeta la qual sera la que es compartira. Fiquem com a propietari nobody nogroup amb tots els permisos ficats.</p>
+<p><img alt="alt text" src="../img/sprint3/samba/crearCarepta.png" /></p>
+<p>En l'arxiu seguent, afegim les caracteristiques de la carpeta a compartir:</p>
+<pre>
+<code class="language-terminal">
+(nano) /etc/samba/smb.conf
+</code>
+</pre>
+
+<pre>
+<code class="language-terminal">
+[nom visible en xarxa]
+path=[ruta absoluta de la carpeta]
+guest ok = [Permet l'acces sense usuari (yes/no)]  
+directory mask = [Permisos per als nous directoris (ex: 0775)]  
+create mask = [Permisos per als nous fitxers (ex: 0664)]  
+browseable = [Si el recurs es visible a la xarxa (yes/no)]  
+read list = [Usuaris o grups amb permis de lectura]  
+write list = [Usuaris o grups amb permis d'escriptura]  
+invalid users = [Llista d'usuaris als quals es denega l'acces]  
+</code>
+</pre>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Es poden afegir usuaris escribint el nom directament, tambe es pot afegir grups posant un @ al principi del nom (@dam).</p>
+</div>
+<p>Reiniciem el servei amb la seguent comanda:</p>
+<pre>
+<code class="language-terminal">
+(sudo) systemctl restart smbd nmbd
+</code>
+</pre>
+
+<p><img alt="alt text" src="../img/sprint3/samba/restartService.png" /></p>
+<p>Seguidament, afegim els usuaris que es podran autenticar dintre del sistema amb la seguent comanda:</p>
+<pre>
+<code class="language-terminal">
+(sudo) useradd -M -s /sbin/nologin [usuari] 
+</code>
+</pre>
+
+<p><img alt="alt text" src="../img/sprint3/samba/useraddRE.png" />
+<img alt="alt text" src="../img/sprint3/samba/useraddW.png" /></p>
+<p>Podem comprovar que s'han afegit els usuaris correctament amb la seguent comanda:</p>
+<pre>
+<code class="language-terminal">
+(sudo) tail [- (usuaris afegits)] /etc/passwd
+</code>
+</pre>
+
+<p><img alt="alt text" src="../img/sprint3/samba/tail.png" /></p>
+<p>En aquest cas, hem afegit un grup. El procediment continua sent el mateix.</p>
+<p><img alt="alt text" src="../img/sprint3/samba/addgDAM.png" /></p>
+<p><img alt="alt text" src="../img/sprint3/samba/tailDAM.png" /></p>
+<p>Finalment, posarem una contrasenya per a cadascun dels usuaris amb la seguent comanda:</p>
+<pre>
+<code class="language-terminal">
+(sudo) smbpasswd -a [usuari]
+</code>
+</pre>
+
+<p><img alt="alt text" src="../img/sprint3/samba/smbpasswd.png" /></p>
+<h4 id="configuracio-clients_1">Configuracio Clients</h4>
+<p>Primer de tot, instalarem el paquet samba amb la seguent comanda:</p>
+<pre>
+<code class="language-terminal">
+(sudo) apt install smbclient
+</code>
+</pre>
+
+<p>En <b>Ubuntu Desktop<b>, podem connectar-nos al servidor mitjansant l'aplicacio fitxers -&gt; altres ubicacions i escriure l'adresa del servidor i carpeta que volem accedir.</p>
+<pre>
+<code class="language-terminal">
+smb://[ip servidor]/[carpeta]/
+</code>
+</pre>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Les seguents proves s'han fet a un servidor on es deixaba accedir en format anonim sense poder fer canvis. </p>
+</div>
+<p>Seguidament, ens demanara autentificar-nos. Com a primera prova, ens autenticarem com anonims.</p>
+<p><img alt="alt text" src="../img/sprint3/samba/anonymousAuth.png" /></p>
+<p>Com no tenim permisos per a modificar o crear en la carpeta, no ens deixara.</p>
+<p><img alt="alt text" src="../img/sprint3/samba/AnonymousErr.png" /></p>
+<p>Si volem autenticar-nos com a usuari, seria de la seguent forma:</p>
+<p><img alt="alt text" src="../img/sprint3/samba/normalAuth.png" /></p>
+<p>En aquest cas, si que ens deixa crear o modificar dintre de la carpeta.</p>
+<p><img alt="alt text" src="../img/sprint3/samba/normalCreate.png" /></p>
+<p>Finalment, podem comprovar en el servidor que el fitxer s'ha creat.</p>
+<p><img alt="alt text" src="../img/sprint3/samba/normalCRSERVER.png" /></p>
+<h3 id="ldap_1">LDAP</h3>
+<h4 id="configuracio-servidor_2">Configuracio Servidor</h4>
+<p>Primer, instalarem el seguent paquet:</p>
+<p><img alt="alt text" src="../img/sprint3/carpetaLDAP/installServer.png" /></p>
+<pre>
+<code class="language-terminal">
+(sudo) apt install nfs-kernel-server
+</code>
+</pre>
+
+<p>Creem la carpeta que volem compartir el qual tindra nobody nogroup i tots els permisos ficats:</p>
+<p><img alt="alt text" src="../img/sprint3/carpetaLDAP/crearCarpeta.png" /></p>
+<p><img alt="alt text" src="img/sprint3/carpetaLDAP/grep.png" /></p>
+<p>Seguidament, entrarem en el seguent fitxer de configuracio:</p>
+<pre>
+<code class="language-terminal">
+(sudo) nano /etc/exports
+</code>
+</pre>
+
+<p>Afegirem la seguent linea per a poder compartir la carpeta:</p>
+<p><img alt="alt text" src="../img/sprint3/carpetaLDAP/exports.png" /></p>
+<pre>
+<code class="language-terminal">
+[carpeta] *(rw,sync,no_root_squash,no_subtree_check)
+</code>
+</pre>
+
+<p>Finalment, reinciem el servei per a actualitzar els canvis:</p>
+<p><img alt="alt text" src="../img/sprint3/carpetaLDAP/restartService.png" /></p>
+<pre>
+<code class="language-terminal">
+(sudo) systemctl restart nfs-kernel-server
+</code>
+</pre>
+
+<h4 id="configuracio-clients_2">Configuracio Clients</h4>
+<p>En el client de LDAP, instalem el seguent paquet:</p>
+<p><img alt="alt text" src="../img/sprint3/carpetaLDAP/installClient.png" /></p>
+<pre>
+<code class="language-terminal">
+(sudo) apt install nfs-common rpcbind
+</code>
+</pre>
+
+<p>Seguidament, creem la carpeta local on es connectara al servidor:</p>
+<p><img alt="alt text" src="../img/sprint3/carpetaLDAP/clientCarpeta.png" /></p>
+<p>A continuacio, modificarem el seguent fitxer:</p>
+<pre>
+<code class="language-terminal">
+(sudo) nano /etc/fstab
+</code>
+</pre>
+
+<p>En el fitxer, afegirem la seguent linea de configuracio:</p>
+<p><img alt="alt text" src="../img/sprint3/carpetaLDAP/fstab.png" /></p>
+<pre>
+<code class="language-terminal">
+[ip servidor]:[ruta absoluta carpeta] [ruta absoluta carpeta local] nfs auto,noatime,nolock,bg,nfsvers=3,intr,tcp,actimeo=1800 0 0
+</code>
+</pre>
+
+<p>Podem comprovar reiniciant el client i creant o eliminant fitxers en la carpeta que esta connectada al sevidor.</p>
+<p><img alt="alt text" src="../img/sprint3/carpetaLDAP/provaClient.png" /></p>
+<p><img alt="alt text" src="../img/sprint3/carpetaLDAP/provasServer.png" /></p>
 
 
 
