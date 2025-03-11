@@ -76,6 +76,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#sprint-4" class="md-skip">
+          Saltar a contenido
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -405,6 +410,19 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Sprint 4
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -415,6 +433,134 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#connexio-remota-teamviewer" class="md-nav__link">
+    Connexió remota TeamViewer
+  </a>
+  
+    <nav class="md-nav" aria-label="Connexió remota TeamViewer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instalacio" class="md-nav__link">
+    Instalacio
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connexio" class="md-nav__link">
+    Connexio
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comprovacio" class="md-nav__link">
+    Comprovacio
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#monitoritzacio" class="md-nav__link">
+    Monitorització
+  </a>
+  
+    <nav class="md-nav" aria-label="Monitorització">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-son-els-logs" class="md-nav__link">
+    Que son els Logs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fitxers-mes-importants" class="md-nav__link">
+    Fitxers mes importants
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visualitzar-logs" class="md-nav__link">
+    Visualitzar Logs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuracio" class="md-nav__link">
+    Configuracio
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enviar-logs-a-un-servidor" class="md-nav__link">
+    Enviar Logs a un servidor
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#llicenciament" class="md-nav__link">
+    Llicenciament
+  </a>
+  
+    <nav class="md-nav" aria-label="Llicenciament">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#privat" class="md-nav__link">
+    Privat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#public" class="md-nav__link">
+    Public
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -435,9 +581,60 @@
                   
 
 
-  <h1>Sprint 4</h1>
+<h1 id="sprint-4">Sprint 4</h1>
+<h2 id="connexio-remota-teamviewer">Connexió remota TeamViewer</h2>
+<h3 id="instalacio">Instalacio</h3>
+<p>Primer de tot, anirem a a la <a href="https://www.teamviewer.com/es/?utm_source=google&amp;utm_medium=cpc&amp;utm_campaign=es%7Cb%7Cpr%7C22%7Csep%7Ctv-core-brand-only-exact-sn%7Cnew%7Ct0%7C0&amp;utm_content=Exact&amp;utm_term=teamviewer&amp;_bt=661339228319&amp;_bm=e&amp;_bn=g&amp;gad_source=1&amp;gclid=CjwKCAjwvr--BhB5EiwAd5YbXpMykRQnhQPO7cqgn2vhozkox4sA__8oDkk4Zmmr4v1I0UfijKoUkhoC2pAQAvD_BwE">pagina oficial de teamvewer</a> i accedirem al boto de descarga gratuita.</p>
+<p><img alt="alt text" src="../img/sprint4/TeamViewer/webInstalacio.png" /></p>
+<p>En aquest cas, al ser una prova utilitzarem la versio gratuita de TeamViewer</p>
+<p><img alt="alt text" src="../img/sprint4/TeamViewer/preusTeamViewer.png" /></p>
+<p>Seguidament, descargarem el fitxer (en aquest cas la primera opcio).</p>
+<p><img alt="alt text" src="../img/sprint4/TeamViewer/downloadUbuntu.png" /></p>
+<p>En Ubuntu, necessitarem instalar les seguents dependencies:</p>
+<pre>
+<code class="language-terminal">
+(sudo) apt install libminizip1 libxcb-xinerama0
+</code>
+</pre>
 
+<p><img alt="alt text" src="../img/sprint4/TeamViewer/dependencies.png" /></p>
+<p>Finalment, instalem el paquet. En aquest cas es a partir d'un fitxer .deb, el qual es pot instalar amb la seguent comanda:</p>
+<pre>
+<code class="language-terminal">
+(sudo) dpkg -i [nom del fitxer .deb]
+</code>
+</pre>
 
+<p><img alt="alt text" src="../img/sprint4/TeamViewer/install.png" /></p>
+<p>Una vegada instalat, accedim al TeamViewer i acceptem el EULA.</p>
+<p><img alt="alt text" src="../img/sprint4/TeamViewer/eulaAccept.png" /></p>
+<p>Finalment, estem al menu principal de TeamViewer</p>
+<p><img alt="alt text" src="../img/sprint4/TeamViewer/home.png" /></p>
+<h3 id="connexio">Connexio</h3>
+<p>Per connectar-nos a un altre ordinador, primer ha de tenir TeamViewer instalat. A part s'ha de tenir un compte de TeamViewer iniciat a l'ordinador el qual es connectara amb l'altre.
+<br><br></p>
+<p>Primer, necessitarem el Partner ID del dispositiu que volem connectar-nos i escollim el el boto de remote control.</p>
+<p><img alt="alt text" src="../img/sprint4/TeamViewer/PartnerID.png" /></p>
+<p>Ens demanara la contrasenya que es mostra al dispositiu que ens volem connectar.</p>
+<p><img alt="alt text" src="../img/sprint4/TeamViewer/password.png" /></p>
+<p>En el dispositiu que es vol connectar, Ubuntu ens demanara permisos per acceptar el control remot de la nostra pantalla.</p>
+<p><img alt="alt text" src="../img/sprint4/TeamViewer/acceptRemote.png" /></p>
+<p>Finalment, estem connectats al dispositiu de forma remota.</p>
+<p><img alt="alt text" src="../img/sprint4/TeamViewer/remoteComprovacio.png" /></p>
+<h3 id="comprovacio">Comprovacio</h3>
+<p>Per comprovar que hem accedit al dispositiu de forma remota, s'ha creat un fitxer en el home de l'usuari.</p>
+<p><img alt="alt text" src="../img/sprint4/TeamViewer/remoteComprovacio.png" /></p>
+<p>En el dispositiu connectat, es pot veure que el fitxer s'ha creat.</p>
+<p><img alt="alt text" src="../img/sprint4/TeamViewer/hostComprovacio.png" /></p>
+<h2 id="monitoritzacio">Monitorització</h2>
+<h3 id="que-son-els-logs">Que son els Logs</h3>
+<h3 id="fitxers-mes-importants">Fitxers mes importants</h3>
+<h3 id="visualitzar-logs">Visualitzar Logs</h3>
+<h3 id="configuracio">Configuracio</h3>
+<h3 id="enviar-logs-a-un-servidor">Enviar Logs a un servidor</h3>
+<h2 id="llicenciament">Llicenciament</h2>
+<h3 id="privat">Privat</h3>
+<h3 id="public">Public</h3>
 
 
 
