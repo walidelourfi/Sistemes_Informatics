@@ -499,8 +499,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fitxers-mes-importants" class="md-nav__link">
-    Fitxers mes importants
+  <a href="#fitxers" class="md-nav__link">
+    Fitxers
   </a>
   
 </li>
@@ -798,10 +798,124 @@
 <p><img alt="alt text" src="../img/sprint4/TeamViewer/hostComprovacio.png" /></p>
 <h2 id="monitoritzacio">Monitorització</h2>
 <h3 id="que-son-els-logs">Que son els Logs</h3>
-<h3 id="fitxers-mes-importants">Fitxers mes importants</h3>
+<p>Els logs son arxius on el sistema operatiu i les aplicacions enregistren informacio sobre esdeveniments, errors, advertencies i altres activitats.
+<br>
+Aquests registres son utils per diagnosticar problemes i monitorar el sistema.</p>
+<h3 id="fitxers">Fitxers</h3>
+<p>Els fitxers on es guarda els logs del sistema Linux es troben en la carpeta:</p>
+<pre>
+<code class="language-terminal">
+/var/log/
+</code>
+</pre>
+
+<p>Els mes importans son:</p>
+<ul>
+<li>syslog: esdeveniments generals del sistema.</li>
+<li>auth.log: registres d'autenticacio com inici de sessions.</li>
+<li>kern.log: esdeveniments del kernel de Linux.</li>
+</ul>
 <h3 id="visualitzar-logs">Visualitzar Logs</h3>
+<p>Els logs es poden visualitzar de dues formes:</p>
+<ul>
+<li>Al ser arxius, es pot utilitzar tail per veure els ultims errors ocurrits.</li>
+</ul>
+<pre>
+<code class="language-terminal">
+tail -f [log]
+</code>
+</pre>
+
+<p><img alt="alt text" src="../img/sprint4/logs/tail.png" /></p>
+<ul>
+<li>Utilitzant la comanda journalctl:
+<br>
+La comanda solament mostrara els logs de syslog, a part es pot adjuntar amb grep o els parametres necessaris.</li>
+</ul>
+<pre>
+<code class="language-terminal">
+journalctl (parametres)
+</code>
+</pre>
+
+<p><img alt="alt text" src="../img/sprint4/logs/journal.png" /></p>
+<p><br>
+En aquest cas s'utilitza els parametres xe per a mostrar informacio extra (x) i que mostri directament les ultimes linees (e).</p>
 <h3 id="configuracio">Configuracio</h3>
+<p>Es pot configurar els logs per a que certs arxius solament tinguin certs logs.
+<br>
+En aquest cas afegirem els logs critics a un arxiu personalitzat.
+<br><br>
+Primer, obrirem l'arxiu per a configurar els logs:</p>
+<pre>
+<code class="language-terminal">
+(sudo) nano /etc/rsyslog.d/50-default.conf
+</code>
+</pre>
+
+<p><img alt="alt text" src="../img/sprint4/logs/50default.png" /></p>
+<p>Segudimanet, afegirem la linea per a que tots els logs critics s'escriguin al nostre fitxer:</p>
+<p><img alt="alt text" src="../img/sprint4/logs/crit.png" /></p>
+<pre>
+<code class="language-terminal">
+*.crit  -[ruta absoluta del fitxer]
+</code>
+</pre>
+
+<p>Una vegada fets els canvis, reiniciem el servei:</p>
+<p><img alt="alt text" src="../img/sprint4/logs/restart.png" /></p>
+<pre>
+<code class="language-terminal">
+(sudo) systemctl restart rsyslog
+</code>
+</pre>
+
+<p>Per no es esperar a que un error apareixi, enviarem un error amb un missatge personalitzat a proposit:</p>
+<p><img alt="alt text" src="../img/sprint4/logs/logger.png" /></p>
+<pre>
+<code class="language-terminal">
+(sudo) logger -i -s -p [apartat].[categoria] [missatge]
+</code>
+</pre>
+
+<p>Finalment, podem veure en el fitxer que el log s'ha guardat correctmanet:</p>
+<p><img alt="alt text" src="../img/sprint4/logs/walidLog.png" /></p>
 <h3 id="enviar-logs-a-un-servidor">Enviar Logs a un servidor</h3>
+<p>Per enviar logs a un servidor extern, utilitzarem NFS per a compartir una carpeta i guardar els logs.
+<br><br>
+Primer de tot, crearem una carpeta per a que faigui de connexio entre el servidor i l'equip:</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>La carpeta ha d'estar dintre de /var/log/ de l'equip ja que a fora d'aquesta els logs no es crearan.</p>
+</div>
+<pre>
+<code class="language-terminal">
+(sudo) mkdir /var/log/[carpeta]
+</code>
+</pre>
+
+<p>A continuacio, montarem la carpeta del servidor en la local:</p>
+<pre>
+<code class="language-terminal">
+(sudo) mount [ip servidor]:[carpeta en ruta absoluta] [carpeta local en ruta absoluta]
+</code>
+</pre>
+
+<p><img alt="alt text" src="../img/sprint4/logs/mkdir.png" /></p>
+<p>En el fitxer de configuracio dels logs, crearem la regla per a capturar els logs i el guardarem a la carpeta que esta compartida per el servidor:</p>
+<p><img alt="alt text" src="../img/sprint4/logs/connexioLog.png" /></p>
+<p>Reiniciem el servei de logs:</p>
+<pre>
+<code class="language-terminal">
+(sudo) systemctl restart rsyslog
+</code>
+</pre>
+
+<p><img alt="alt text" src="../img/sprint4/logs/restartWarning.png" /></p>
+<p>Enviem un log per a comprovar que els logs s'envien al servidor de forma correcta:</p>
+<p><img alt="alt text" src="../img/sprint4/logs/loggerServidor.png" /></p>
+<p>Finalment, podem veure que al servidor s'ha guardat el log de forma correcta:</p>
+<p><img alt="alt text" src="../img/sprint4/logs/servidor.png" /></p>
 <h2 id="llicenciament">Llicenciament</h2>
 <p>Una llicencia de programari es un conjunt de condicions legals que determinen com es pot utilitzar, modificar i distribuir un programa informatic.
 <br>
