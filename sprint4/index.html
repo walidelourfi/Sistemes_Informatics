@@ -526,6 +526,33 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#enviar-logs-per-xarxa-a-un-servidor" class="md-nav__link">
+    Enviar Logs per xarxa a un servidor
+  </a>
+  
+    <nav class="md-nav" aria-label="Enviar Logs per xarxa a un servidor">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#servidor" class="md-nav__link">
+    servidor
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#client" class="md-nav__link">
+    Client
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -838,14 +865,28 @@ journalctl (parametres)
 </code>
 </pre>
 
-<p>Parametres:
-- -n o -X: mostra les ultimes linees.
-- -f: fa un seguiment en temps real.
-- -r: mostra els logs en ordre invers(els mes recents primer).
-- --since "YYYY-MM-DD HH:MM:SS": mostra els logs de un moment en especific.
-- --until "YYYY-MM-DD HH:MM:SS": mostra els logs fins a un moment en especific.
-- -u (nom de servei): mostra els logs de un servei especific.
-- -p (nivell de registre): mostra els logs segons el nivell de registre.</p>
+<p>Parametres:</p>
+<ul>
+<li>
+<p>-r: mostra els logs en ordre invers(els mes recents primer).
+<img alt="alt text" src="../img/sprint4/logs/r.png" /></p>
+</li>
+<li>
+<p>-u (nom de servei): mostra els logs de un servei especific.
+<img alt="alt text" src="../img/sprint4/logs/uDocker.png" /></p>
+</li>
+<li>
+<p>-p (nivell de registre): mostra els logs segons el nivell de registre.
+<img alt="alt text" src="../img/sprint4/logs/p0.png" />
+<br>
+En aquest cas s'ha utilitzat el parametre -p 0</p>
+</li>
+<li>
+<p>--since "YYYY-MM-DD HH:MM:SS": mostra els logs de un moment en especific.</p>
+</li>
+<li>--until "YYYY-MM-DD HH:MM:SS": mostra els logs fins a un moment en especific.</li>
+<li>-f: fa un seguiment en temps real.</li>
+</ul>
 <p><img alt="alt text" src="../img/sprint4/logs/journal.png" /></p>
 <p><br>
 En aquest cas s'utilitza els parametres xe per a mostrar informacio extra (x) i que mostri directament les ultimes linees (e).</p>
@@ -924,6 +965,45 @@ Primer de tot, crearem una carpeta per a que faigui de connexio entre el servido
 <p><img alt="alt text" src="../img/sprint4/logs/loggerServidor.png" /></p>
 <p>Finalment, podem veure que al servidor s'ha guardat el log de forma correcta:</p>
 <p><img alt="alt text" src="../img/sprint4/logs/servidor.png" /></p>
+<h3 id="enviar-logs-per-xarxa-a-un-servidor">Enviar Logs per xarxa a un servidor</h3>
+<h4 id="servidor">servidor</h4>
+<p>Primer de tot, anirem al servidor i descomantarem les seguents linees de configuracio al arxiu:</p>
+<pre>
+<code class="language-terminal">
+(sudo) nano /etc/rsyslog.conf
+</code>
+</pre>
+
+<p><img alt="alt text" src="../img/sprint4/logs/viaXarxa/serverRsys.png" /></p>
+<p>Com es veu a la imatge, la configuracio esta divida entre els protocols UDP i TCP.
+<br><br></p>
+<p>Reiniciem el servei.</p>
+<pre>
+<code class="language-terminal">
+(sudo) systemctl restart rsyslog
+</code>
+</pre>
+
+<p><img alt="alt text" src="../img/sprint4/logs/viaXarxa/systemCtl.png" /></p>
+<h4 id="client">Client</h4>
+<p>Per al client, o ordinador que enviara els logs, ens dirigim al fitxer:</p>
+<pre>
+<code class="language-terminal">
+(sudo) nano /etc/rsyslog.d/50-default.conf
+</code>
+</pre>
+
+<p>I afegim les seguent linees:</p>
+<pre>
+<code class="language-terminal">
+*.crit     @@[IP servidor]:514
+</code>
+</pre>
+
+<p>Els @ identifiquen el protocol de xarxa que s'usa. @ indica UDP i @@ indica TCP.</p>
+<p><img alt="alt text" src="../img/sprint4/logs/viaXarxa/crit.png" /></p>
+<p>Finalment, comprovem que els logs estan sent correctament enviats.</p>
+<p><img alt="alt text" src="../img/sprint4/logs/viaXarxa/prova.png" /></p>
 <h2 id="llicenciament">Llicenciament</h2>
 <p>Una llicencia de programari es un conjunt de condicions legals que determinen com es pot utilitzar, modificar i distribuir un programa informatic.
 <br>
