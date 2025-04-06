@@ -593,6 +593,73 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#dualboot" class="md-nav__link">
+    DualBoot
+  </a>
+  
+    <nav class="md-nav" aria-label="DualBoot">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instalar-ubuntu-amb-windows" class="md-nav__link">
+    Instalar Ubuntu amb Windows
+  </a>
+  
+    <nav class="md-nav" aria-label="Instalar Ubuntu amb Windows">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instalacio-automatica" class="md-nav__link">
+    Instalacio Automatica
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instalacio-en-particions" class="md-nav__link">
+    Instalacio en particions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#desinstalar-ubuntu-i-arreglar-arrancadors" class="md-nav__link">
+    Desinstalar Ubuntu i arreglar arrancadors
+  </a>
+  
+    <nav class="md-nav" aria-label="Desinstalar Ubuntu i arreglar arrancadors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#desinstalar-ubuntu" class="md-nav__link">
+    Desinstalar Ubuntu
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arreglar-arrancador" class="md-nav__link">
+    Arreglar Arrancador
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -718,6 +785,83 @@ Les versions amb interficie grafica  es diferencien al tindre "Experiencia d'esc
 <p><img alt="alt text" src="../img/sprint5/IPServer/protocolo.png" /></p>
 <p>Finalment, podem configurar la IP necessaria.</p>
 <p><img alt="alt text" src="../img/sprint5/IPServer/IP.png" /></p>
+<h2 id="dualboot">DualBoot</h2>
+<h3 id="instalar-ubuntu-amb-windows">Instalar Ubuntu amb Windows</h3>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Per fer el Dual Boot es important instalar primer Windows i seguidament Ubuntu, ja que, al fer-ho a l'inreves Windows podria borrar l'iniciador de Ubuntu.</p>
+</div>
+<p>Per instalar Ubuntu, solament haurem de arrancar l'instalador.
+<br><br>
+En aquest cas s'esta utilitzant VirtualBox. En VirtualBox haurem de dirigir-nos als paremetres de la maquina virtual -&gt; Emmagatzematze.</p>
+<p><img alt="alt text" src="../img/sprint5/dualbootInstall/parametres.png" /></p>
+<p>En el icono del disc, escollim la ISO de Ubuntu, en aquest cas Ubuntu 24.</p>
+<p><img alt="alt text" src="../img/sprint5/dualbootInstall/icono.png" /></p>
+<p>Seguidament, podem iniciar la maquina.</p>
+<p><img alt="alt text" src="../img/sprint5/dualbootInstall/tryInstall.png" /></p>
+<h4 id="instalacio-automatica">Instalacio Automatica</h4>
+<p>Si volem que el propi instalador de Ubuntu relitzi les operacions necessaries, escollim l'opcio d'instalar juntament en Windows.</p>
+<p><img alt="alt text" src="../img/sprint5/dualbootInstall/autoInstall.png" /></p>
+<h4 id="instalacio-en-particions">Instalacio en particions</h4>
+<p>Si es vol seleccionar una particio en especific, haurem d'escollir l'opcio d'instalament manual.</p>
+<p><img alt="alt text" src="../img/sprint5/dualbootInstall/manualInstall.png" /></p>
+<p>En el menu, escollim la particio que volem (en aquest cas la particio lliure) i cliquem al boto +.</p>
+<p><img alt="alt text" src="../img/sprint5/dualbootInstall/partitionMenu.png" /></p>
+<p>En el seguent menu, escollim la mida que volem que tingui l'Ubuntu dintre de la particio. A part podem escollir quina carpeta s'instalara, com volen tindre tot el sistema operatiu, escollim l'arrel.</p>
+<p><img alt="alt text" src="../img/sprint5/dualbootInstall/partitionMount.png" /></p>
+<p>Finalment, podem continuar amb l'instalacio.</p>
+<p><img alt="alt text" src="../img/sprint5/dualbootInstall/nextMenu.png" /></p>
+<h3 id="desinstalar-ubuntu-i-arreglar-arrancadors">Desinstalar Ubuntu i arreglar arrancadors</h3>
+<p>Al fer un Dual Boot de Windows i Linux, GRUB arranca els dos i desactiva l'arrencador de Windows. Si es desinstala el Linux es pot tornar a activar l'arrencador de Windows per a utilitzar-lo de forma normal.</p>
+<h4 id="desinstalar-ubuntu">Desinstalar Ubuntu</h4>
+<p>Abans de comencar, per desinstalar Ubuntu, borrarem la particio on esta actualment. S'utilitzara la mateixa maquina que el de Dual Boot anterior.
+<br><br></p>
+<p>Primer de tot, iniciarem la maquina amb la ISO de GParted. En el menu, seleccionare el GParted Live.</p>
+<p><img alt="alt text" src="../img/sprint5/arreglarArrancador/gpartedInici.png" /></p>
+<p>En la primera pantalla de configuracio escollirem que no toqui el mapejat del teclat.</p>
+<p><img alt="alt text" src="../img/sprint5/arreglarArrancador/conf1.png" /></p>
+<p>Seguidament, ens demanara que escollesim el llenguatge de GParted.</p>
+<p><img alt="alt text" src="../img/sprint5/arreglarArrancador/conf2.png" /></p>
+<p>Al iniciar la maquina, ens iniciara el programa GParted. En el programa, podrem veure les dues particions, com en aquest cas es vol borrar Ubuntu, escollirem la particio amb el sistema de fitxers ext4.</p>
+<p><img alt="alt text" src="../img/sprint5/arreglarArrancador/selectPart.png" /></p>
+<p>Per eliminar la particio, fem clic dret i delete.</p>
+<p><img alt="alt text" src="../img/sprint5/arreglarArrancador/dewlete.png" /></p>
+<p>En la part superior, apliquem els canvis clicant el tic verd.</p>
+<p><img alt="alt text" src="../img/sprint5/arreglarArrancador/confirm.png" /></p>
+<p>Una vegada confirmats els canvis, podem veure que la particio de Ubuntu esta en gris i no te cap sistema de fitxers.</p>
+<p><img alt="alt text" src="../img/sprint5/arreglarArrancador/overall.png" /></p>
+<p>Finalment, al reiniciar l'equip, GRUB, el qual es el arrancador del DualBoot entrara en panic al no trobar Ubuntu.</p>
+<p><img alt="alt text" src="../img/sprint5/arreglarArrancador/grubRescue.png" /></p>
+<h4 id="arreglar-arrancador">Arreglar Arrancador</h4>
+<p>Per arreglar el arrancador de Windows, iniciarem la maquina amb l'instalador de Windows. En menys d'escollir instalar l'equip, escollirem l'opcio en petit de reparar-ho.</p>
+<p><img alt="alt text" src="../img/sprint5/arreglarArrancador/repararEquipo.png" /></p>
+<p>Escollim l'opcio de solucionar problemes.</p>
+<p><img alt="alt text" src="../img/sprint5/arreglarArrancador/solucionar.png" /></p>
+<p>A continuacio, escollim l'opcio de simbol del sistema i aquest obrira el CMD de l'equip.</p>
+<p><img alt="alt text" src="../img/sprint5/arreglarArrancador/simbolo.png" /></p>
+<p>Escrivim la seguent comanda per poder entrara la configuracio de disc.</p>
+<pre>
+<code class="language-terminal">
+diskpart
+</code>
+</pre>
+
+<p><img alt="alt text" src="../img/sprint5/arreglarArrancador/diskpart.png" /></p>
+<p>Finalment, escrivim les seguents comandes per poder activar l'arrancador de Windows.</p>
+<pre>
+<code class="language-terminal">
+list disk //llista els discs de l'equip
+select disk 0 //selecciona el disc
+list partition //llista les particions del disc seleccionat
+select partition 1 //Com l'arrancador de Windows ocupa poc, utilitza una particio de pocs MB, per aquest cas cal escollir la particio de l'arrancador
+active //activa l'arrancador
+exit //surt de diskpart
+exit //segon exit per sortir del CMD
+</code>
+</pre>
+
+<p><img alt="alt text" src="../img/sprint5/arreglarArrancador/comands.png" /></p>
+<p>Una vegada fetes les comandes, es pot reiniciar l'equip i aquest entrara en Windows de forma habitual.</p>
 
 
 
