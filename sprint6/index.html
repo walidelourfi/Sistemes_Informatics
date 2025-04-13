@@ -1,0 +1,1240 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://walidelourfi.github.io/Sistemes_Informatics/sprint6/">
+      
+      
+        <link rel="prev" href="../sprint5/">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.0">
+    
+    
+      
+        <title>Sprint 6 - Sistemes Informatics | Walid El Ourfi</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.9f615399.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.649f08f9.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#sprint-6" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href=".." title="Sistemes Informatics | Walid El Ourfi" class="md-header__button md-logo" aria-label="Sistemes Informatics | Walid El Ourfi" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Sistemes Informatics | Walid El Ourfi
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Sprint 6
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="lime"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../sprint1/" class="md-tabs__link">
+        
+  
+    
+  
+  Sprint 1
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../sprint2/" class="md-tabs__link">
+        
+  
+    
+  
+  Sprint 2
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../sprint3/" class="md-tabs__link">
+        
+  
+    
+  
+  Sprint 3
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../sprint4/" class="md-tabs__link">
+        
+  
+    
+  
+  Sprint 4
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../sprint5/" class="md-tabs__link">
+        
+  
+    
+  
+  Sprint 5
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+    
+  
+  Sprint 6
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Sistemes Informatics | Walid El Ourfi" class="md-nav__button md-logo" aria-label="Sistemes Informatics | Walid El Ourfi" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Sistemes Informatics | Walid El Ourfi
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sprint1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sprint 1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sprint2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sprint 2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sprint3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sprint 3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sprint4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sprint 4
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sprint5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sprint 5
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Sprint 6
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Sprint 6
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#gestio-de-processos" class="md-nav__link">
+    Gestio de Processos
+  </a>
+  
+    <nav class="md-nav" aria-label="Gestio de Processos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#administrador-de-tasques" class="md-nav__link">
+    Administrador de Tasques
+  </a>
+  
+    <nav class="md-nav" aria-label="Administrador de Tasques">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#simple" class="md-nav__link">
+    Simple
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#avansat" class="md-nav__link">
+    Avansat
+  </a>
+  
+    <nav class="md-nav" aria-label="Avansat">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#processos" class="md-nav__link">
+    Processos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rendiment" class="md-nav__link">
+    Rendiment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#historial-daplicacions" class="md-nav__link">
+    Historial d'Aplicacions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inici" class="md-nav__link">
+    Inici
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usuaris" class="md-nav__link">
+    Usuaris
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detalls" class="md-nav__link">
+    Detalls
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#serveis" class="md-nav__link">
+    Serveis
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#matar-processos" class="md-nav__link">
+    Matar Processos
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comandes" class="md-nav__link">
+    Comandes
+  </a>
+  
+    <nav class="md-nav" aria-label="Comandes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cmd" class="md-nav__link">
+    CMD
+  </a>
+  
+    <nav class="md-nav" aria-label="CMD">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#llistar-processos" class="md-nav__link">
+    LListar Processos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#matar-processos_1" class="md-nav__link">
+    Matar Processos
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#powershell" class="md-nav__link">
+    PowerShell
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gestio-dusuaris-i-grups" class="md-nav__link">
+    Gestio d'Usuaris i Grups
+  </a>
+  
+    <nav class="md-nav" aria-label="Gestio d'Usuaris i Grups">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gestio-dusuaris" class="md-nav__link">
+    Gestio d'Usuaris
+  </a>
+  
+    <nav class="md-nav" aria-label="Gestio d'Usuaris">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#crear-usuaris" class="md-nav__link">
+    Crear Usuaris
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eliminar-usuari" class="md-nav__link">
+    Eliminar Usuari
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gestio-de-grups" class="md-nav__link">
+    Gestio de Grups
+  </a>
+  
+    <nav class="md-nav" aria-label="Gestio de Grups">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#crear-grups" class="md-nav__link">
+    Crear Grups
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eliminar-grups" class="md-nav__link">
+    Eliminar Grups
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agregar-usuaris" class="md-nav__link">
+    Agregar Usuaris
+  </a>
+  
+    <nav class="md-nav" aria-label="Agregar Usuaris">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#afegir-usuaris-al-crear-el-grup" class="md-nav__link">
+    Afegir Usuaris al Crear el Grup
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#afegir-usuaris-a-un-grup-ja-creat" class="md-nav__link">
+    Afegir Usuaris a un Grup ja Creat
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gestio-de-permisos" class="md-nav__link">
+    Gestio de Permisos
+  </a>
+  
+    <nav class="md-nav" aria-label="Gestio de Permisos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#assignar-permisos" class="md-nav__link">
+    Assignar Permisos
+  </a>
+  
+    <nav class="md-nav" aria-label="Assignar Permisos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#permisos-dherencia" class="md-nav__link">
+    Permisos d'Herencia
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#permisos-sobre-usuaris-i-grups" class="md-nav__link">
+    Permisos Sobre Usuaris i Grups
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicar-exepcions" class="md-nav__link">
+    Aplicar Exepcions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#consultar-permisos" class="md-nav__link">
+    Consultar Permisos
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sistemes-de-fitxers" class="md-nav__link">
+    Sistemes de Fitxers
+  </a>
+  
+    <nav class="md-nav" aria-label="Sistemes de Fitxers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#montatge" class="md-nav__link">
+    Montatge
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#copies-de-seguretat" class="md-nav__link">
+    Copies de Seguretat
+  </a>
+  
+    <nav class="md-nav" aria-label="Copies de Seguretat">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#script" class="md-nav__link">
+    Script
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assignar-execucio-automatica" class="md-nav__link">
+    Assignar Execucio Automatica
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="sprint-6">Sprint 6</h1>
+<h2 id="gestio-de-processos">Gestio de Processos</h2>
+<h3 id="administrador-de-tasques">Administrador de Tasques</h3>
+<p>L'administrador de tasques es l'aplicacio grafica per defecte que te Windows per administrar els processos.
+<br>
+Aquest te dos modes, un senzill i un mes complet.
+<br><br>
+L'administrador de tasques es pot obrir de la seguent forma:
+<br><br>
+Fent clic dret a la barra inferior, seguidament cliquem l'opcio de l'administrador de tasques.</p>
+<p><img alt="alt text" src="../img/sprint6/GestioProcessos/AdminTasques/comoEntrar.png" />
+<br></p>
+<h4 id="simple">Simple</h4>
+<p>El mode simple de l'administrador de tasques solament mostrara les aplicacions que s'estan executan actualment al sistema en primer pla.</p>
+<p><img alt="alt text" src="../img/sprint6/GestioProcessos/AdminTasques/adminSimpleREs.png" /></p>
+<p><img alt="alt text" src="../img/sprint6/GestioProcessos/AdminTasques/adminSimpleEdge.png" /></p>
+<h4 id="avansat">Avansat</h4>
+<p>Per entrar en el mode avansat, clicarem al boto de mes detalls situat en la seccio inferior esquerra.</p>
+<p><img alt="alt text" src="../img/sprint6/GestioProcessos/AdminTasques/masDetalles.png" />
+<br></p>
+<p>El mode avansat te diferentes seccions per poder visualitzar millor els processos:</p>
+<h5 id="processos">Processos</h5>
+<p>En aquest apartat es poden veure tots els processos, tant d'aplicacions com de sistema i els recursos que utilitzen en forma de percentatge.</p>
+<p><img alt="alt text" src="../img/sprint6/GestioProcessos/AdminTasques/avProcessos.png" /></p>
+<h5 id="rendiment">Rendiment</h5>
+<p>Mostra quants dels recursos del sistema s'estan utilitzant i altres detall tecnics.</p>
+<p><img alt="alt text" src="../img/sprint6/GestioProcessos/AdminTasques/avaRendiment.png" /></p>
+<h5 id="historial-daplicacions">Historial d'Aplicacions</h5>
+<p>Mostra el us de diferents aplicacions del sistema durant el temps.</p>
+<p><img alt="alt text" src="../img/sprint6/GestioProcessos/AdminTasques/avaHistorial.png" /></p>
+<h5 id="inici">Inici</h5>
+<p>Mostra quines aplicacions s'inicien quan l'equip s'engega, tambe es mostra si estan habilitat d'iniciar-se o no.</p>
+<p><img alt="alt text" src="../img/sprint6/GestioProcessos/AdminTasques/avaInici.png" /></p>
+<h5 id="usuaris">Usuaris</h5>
+<p>Mostra els usuaris actius i l'us de recursos.</p>
+<p><img alt="alt text" src="../img/sprint6/GestioProcessos/AdminTasques/avaUsuari.png" /></p>
+<h5 id="detalls">Detalls</h5>
+<p>Mostra en mes detalls els processos.</p>
+<p><img alt="alt text" src="../img/sprint6/GestioProcessos/AdminTasques/avaDetalls.png" /></p>
+<h5 id="serveis">Serveis</h5>
+<p>Mostra els serveis actius que te el sistema.</p>
+<p><img alt="alt text" src="../img/sprint6/GestioProcessos/AdminTasques/avaServeis.png" /></p>
+<h4 id="matar-processos">Matar Processos</h4>
+<p>Per matar un proces en el administrador de tasques, podem fer clic dret al proces i finalitzar. Tambe es pot fer clic esquerre i clicar el boto de finalitzar de la esquina inferior dret.</p>
+<p><img alt="alt text" src="../img/sprint6/GestioProcessos/AdminTasques/kill.png" /></p>
+<h3 id="comandes">Comandes</h3>
+<h4 id="cmd">CMD</h4>
+<h5 id="llistar-processos">LListar Processos</h5>
+<p>Per a llistar els processos en el CMD s'ha d'ulitzar la seguent comanda, aquesta comanda no s'actualitza:</p>
+<pre>
+<code class="language-terminal">
+tasklist
+</code>
+</pre>
+
+<p><img alt="alt text" src="../img/sprint6/GestioProcessos/Comandes/tasklist.png" /></p>
+<h5 id="matar-processos_1">Matar Processos</h5>
+<p>Per matar un proces en el CMD, es pot referenciar el PID o el nom de l'aplicacio.
+<br><br>
+Per matar utilitzant el nom de l'aplicacio, utilitzem la seguent comanda:</p>
+<pre>
+<code class="language-terminal">
+taskkill /IM [nom.exe]
+</code>
+</pre>
+
+<p><img alt="alt text" src="../img/sprint6/GestioProcessos/Comandes/taskkill.png" /></p>
+<p>Per matar el proces amb el PID, utilitzarem la seguent comanda:</p>
+<pre>
+<code class="language-terminal">
+taskkill /PID [PID]
+</code>
+</pre>
+
+<p><img alt="alt text" src="../img/sprint6/GestioProcessos/Comandes/taskkillV2.png" /></p>
+<h4 id="powershell">PowerShell</h4>
+<p>Per mostrar els processos en PowerShell, utilitzem la seguent comanda:</p>
+<pre>
+<code class="language-terminal">
+Get-Process
+</code>
+</pre>
+
+<p><img alt="alt text" src="../img/sprint6/GestioProcessos/Comandes/GetProcess.png" /></p>
+<p>Per matar un process en PowerShell, utilitzem la seguent comanda. PowerShell no utilitza PID sino ID:</p>
+<pre>
+<code class="language-terminal">
+Stop-Process -Id [id]
+</code>
+</pre>
+
+<p><img alt="alt text" src="../img/sprint6/GestioProcessos/Comandes/StopProcess.png" /></p>
+<h2 id="gestio-dusuaris-i-grups">Gestio d'Usuaris i Grups</h2>
+<p>Per fer la gestio d'usuaris, utilitzarem la seguent comanda:
+<br><br>
+Clicarem les tecles Window + R i escriurem el seguent:</p>
+<pre>
+<code class="language-terminal">
+lusrmgr.msc
+</code>
+</pre>
+
+<p><img alt="alt text" src="../img/sprint6/Usuaris/enterLus.png" /></p>
+<h3 id="gestio-dusuaris">Gestio d'Usuaris</h3>
+<p>Una vegada dintre de l'aplicacio de gestio, clicarem a la carpeta d'usuaris.</p>
+<p><img alt="alt text" src="../img/sprint6/Usuaris/Usuaris.png" /></p>
+<h4 id="crear-usuaris">Crear Usuaris</h4>
+<p>Per crear usuaris, primer fem clic dret -&gt; Usuari Nou.</p>
+<p><img alt="alt text" src="../img/sprint6/Usuaris/userNou.png" /></p>
+<p>En la seguent finestra escrivim el nom de l'usuari i contrasenya. A part es poden aplicar certes normes al crear l'usuari, aquestes son:</p>
+<ul>
+<li>L'usuari ha de canviar la contrasenya a l'iniciar sessio</li>
+<li>L'usuari no pot canviar de contrasenya</li>
+<li>La contrasenya mai expira</li>
+<li>El compte esta deshabilitat</li>
+</ul>
+<p><img alt="alt text" src="../img/sprint6/Usuaris/newUser.png" /></p>
+<h4 id="eliminar-usuari">Eliminar Usuari</h4>
+<p>Per eliminar un usuari, fem clic dret i eliminar.</p>
+<p><img alt="alt text" src="../img/sprint6/Usuaris/rm.png" /></p>
+<h3 id="gestio-de-grups">Gestio de Grups</h3>
+<p>Per gestionar grups, haurem d'entrar a la carpeta de grups.</p>
+<p><img alt="alt text" src="../img/sprint6/Grups/enter.png" /></p>
+<h4 id="crear-grups">Crear Grups</h4>
+<p>Per crear un grup, fem clic dret a la finestra -&gt; nou grup.</p>
+<p><img alt="alt text" src="../img/sprint6/Grups/new.png" /></p>
+<p>Seguidament, es mostrara una finestra on podem ficar el nom del grup i els usuaris que el conformen.</p>
+<p><img alt="alt text" src="../img/sprint6/Grups/nouGrup.png" /></p>
+<h4 id="eliminar-grups">Eliminar Grups</h4>
+<p>Per eliminar un grup, haurem de seleccionar-lo, fer clic dret i eliminar.</p>
+<p><img alt="alt text" src="../img/sprint6/Grups/rm.png" /></p>
+<h4 id="agregar-usuaris">Agregar Usuaris</h4>
+<p>Es poden afegir usuaris al moment de crear el grup o despres.</p>
+<h5 id="afegir-usuaris-al-crear-el-grup">Afegir Usuaris al Crear el Grup</h5>
+<p>Per afegir usuaris a un grup al moment de crear-lo, haurem de clicar el boto d'afegir en la esquina inferior esquerra.</p>
+<p><img alt="alt text" src="../img/sprint6/Grups/addInNew.png" /></p>
+<p>Escrivim el nom de l'usuair al recuadre i despres a comprobar nom.</p>
+<p><img alt="alt text" src="../img/sprint6/Grups/comprobarNombes.png" /></p>
+<p>Si el nom de l'usuari esta ben escrit i esta dintre del sistema, al recuadre es mostrara el nom complet d'aquest.</p>
+<p><img alt="alt text" src="../img/sprint6/Grups/comprobado.png" /></p>
+<h5 id="afegir-usuaris-a-un-grup-ja-creat">Afegir Usuaris a un Grup ja Creat</h5>
+<p>Per afegir un usuari a un grup ja creat, seleccionem el grup, fem clic dret -&gt; Afegir a grup.</p>
+<p><img alt="alt text" src="../img/sprint6/Grups/agregarA.png" /></p>
+<p>Seguidament, cliquem el boto afegir, en la esquina inferior esquerra.</p>
+<p><img alt="alt text" src="../img/sprint6/Grups/agregar.png" /></p>
+<p>Escrivim el nom de l'usuari a afegir i despres a comprobar nom.</p>
+<p><img alt="alt text" src="../img/sprint6/Grups/comprobar2.png" /></p>
+<p>Si el nom de l'usuari esta ben escrit i esta dintre del sistema, al recuadre es mostrara el no complet d'aquest.</p>
+<p><img alt="alt text" src="../img/sprint6/Grups/comprobao.png" /></p>
+<p>Finalment, apliquem el canvis.</p>
+<p><img alt="alt text" src="../img/sprint6/Grups/aplicar.png" /></p>
+<h2 id="gestio-de-permisos">Gestio de Permisos</h2>
+<p>En Windows els permisos es gestionen mitjansant ACLs.
+<br><br>
+Els ACLs (Access Control Lists) son llisten que contenen les regles que determinen quins usuaris o grups poden accedir a certs recursos i que tipus d'accions poden fer.
+<br><br></p>
+<h3 id="assignar-permisos">Assignar Permisos</h3>
+<p>Per assignar permisos, fem clic dret a la carpeta seleccionada -&gt; Propietats -&gt; Seguretat</p>
+<p><img alt="alt text" src="../img/sprint6/permisos/carpeta.png" /></p>
+<p><img alt="alt text" src="../img/sprint6/permisos/Seguretat.png" /></p>
+<h5 id="permisos-dherencia">Permisos d'Herencia</h5>
+<p>Per defecte, les carpetes hereden els seus permisos a tot objecte que contingui dintre.
+<br><br>
+Per deshabilitar aquesta opcio, haurem d'anar a opcions avansades.</p>
+<p><img alt="alt text" src="../img/sprint6/permisos/avansado.png" /></p>
+<p>I deshabilitar l'herencia.</p>
+<p><img alt="alt text" src="../img/sprint6/permisos/deshabilitar.png" /></p>
+<p>Finalment, convertim els permisos heredats fins al moment, en permisos independents.</p>
+<p><img alt="alt text" src="../img/sprint6/permisos/convertir.png" /></p>
+<h5 id="permisos-sobre-usuaris-i-grups">Permisos Sobre Usuaris i Grups</h5>
+<p>Per aplicar permisos sobre usuaris i grups, cliquem editar en el panel de seguretat.</p>
+<p><img alt="alt text" src="../img/sprint6/permisos/editar.png" /></p>
+<p>Seguidament, podrem treure usuaris o grups de la ACL.</p>
+<p><img alt="alt text" src="../img/sprint6/permisos/rmUser.png" /></p>
+<p>Afegir usuaris o grups a la llista.</p>
+<p><img alt="alt text" src="../img/sprint6/permisos/adduser.png" /></p>
+<p><img alt="alt text" src="../img/sprint6/permisos/limitatsAdded.png" /></p>
+<p>Per aplicar permisos o denegar permisos, tenim el recuadre inferior on podem permetre o denegar certes accions. Aquestes accions son:
+- Control Total
+- Modificar
+- Lectura i execucio
+- Mostrar el contingut de la carpeta
+- Lectura
+- Escritura
+- Permisos Especials</p>
+<p>En aquest cas, el grup tindra acces total.</p>
+<p><img alt="alt text" src="../img/sprint6/permisos/controlTotal.png" /></p>
+<h3 id="aplicar-exepcions">Aplicar Exepcions</h3>
+<p>Es poden aplicar exepcions als permisos. Les exepcions poden ser a un usuari en especific (per exemple el grup te control total pero l'usuari sol te permis de lectura) i a grups.
+<br><br>
+Els permisos de denegacio tenen mes pes que els d'acces.
+<br><br></p>
+<p>En aquest cas, el grup Limitats, el qual conte dos usuaris alumne1 i alumne2, te acces total a la carpeta, per tant anem a denegar la escritura i solament donar permisos de lectura a l'usuari alumne2.
+<br><br></p>
+<p>En el recuadre de permisos, solament permetrem la lectura i la mostra del contingut de la carpeta, i denegarem la escritura.</p>
+<p><img alt="alt text" src="../img/sprint6/permisos/noEscritura.png" /></p>
+<h3 id="consultar-permisos">Consultar Permisos</h3>
+<p>Segons el exemple donam anteriorment, l'usuari alumne1 hauria de tindre acces total a la carpeta, en canvi alumne2, encara estar dintre del mateix grup, solament hauria de tindre permisos de lectura.
+<br><br>
+En l'usuari alumne2, a l'intentar crear una nova carpeta dintre de la carpeta en permisos, es pot veure que s'ha de demanar permis de l'administrador.</p>
+<p><img alt="alt text" src="../img/sprint6/permisos/noPermis.png" /></p>
+<p>En canvi, l'usuari alumne1 te acces total a la carpeta.</p>
+<p><img alt="alt text" src="../img/sprint6/permisos/Permis.png" /></p>
+<h2 id="sistemes-de-fitxers">Sistemes de Fitxers</h2>
+<p>En Windows es pot gestionar les particions i els sitemes de fitxers des de l'administrador de discs.
+<br><br>
+Per accedir a l'administrador de discs, podem buscar-lo des de la barra de busqueda incluida en Windows.</p>
+<p><img alt="alt text" src="../img/sprint6/Fitxers/adminDiscos.png" /></p>
+<p>Si tenim els permisos necessaris, podrem accedir a l'aplicacio.</p>
+<p><img alt="alt text" src="../img/sprint6/Fitxers/general.png" /></p>
+<h3 id="montatge">Montatge</h3>
+<p>Per fer un montatge de una particio, seleccionem la particio, fem clic dret -&gt; nou volumen simple.</p>
+<p><img alt="alt text" src="../img/sprint6/Fitxers/nouVolSimple.png" /></p>
+<p>A l'iniciar un nou volumen simple, sortira l'assistent. En aquest assistent podrem indicar la configuracio de la particio.
+<br><br>
+Primer, indicarem la grandaria de la particio.</p>
+<p><img alt="alt text" src="../img/sprint6/Fitxers/MB.png" /></p>
+<p>A continuaci, podrem seleccionar la lletra de la particio per a poder accedir.</p>
+<p><img alt="alt text" src="../img/sprint6/Fitxers/letra.png" /></p>
+<p>En aquest apartat, podem assignar un nom al volumen i el sistema de fitxers que utilitza.</p>
+<p><img alt="alt text" src="../img/sprint6/Fitxers/nom.png" /></p>
+<p>Per ultim, ens mostrara un resum de les caracteristiques que hem aplicat al volumen.</p>
+<p><img alt="alt text" src="../img/sprint6/Fitxers/fin.png" /></p>
+<h2 id="copies-de-seguretat">Copies de Seguretat</h2>
+<p>Com en Windows no hi ha una aplicacio integrada per a fer copies de seguretat, haurem de crear un script per a fer-ho.
+<br><br>
+En aquest cas, l'script fara una copia del contingut de cada usuari (alumne1 i alumne2) cada vegada que inicien sessio.</p>
+<h3 id="script">Script</h3>
+<pre>
+<code class="language-terminal">
+@echo off
+setlocal
+
+REM Crear la carpeta de destinació si no existeix
+if not exist "E:\CopiesUsuaris\%USERNAME%" (
+    mkdir "E:\CopiesUsuaris\%USERNAME%"
+)
+
+REM Copiar els fitxers amb ROBOCOPY
+robocopy "C:\Users\%USERNAME%" "E:\CòpiesUsuaris\%USERNAME%" /MIR /Z /R:3 /W:5 /XD "AppData"
+
+echo Còpia completada.
+pause
+</code>
+</pre>
+
+<h3 id="assignar-execucio-automatica">Assignar Execucio Automatica</h3>
+<p>Per assignar la execucio de forma automatica quan iniciem sessio, utilitzarem la seguent comanda:
+<br><br>
+Clicarem les tecles Window + R i escriurem el seguent:</p>
+<pre>
+<code class="language-terminal">
+gpedit.msc
+</code>
+</pre>
+
+<p><img alt="alt text" src="../img/sprint6/copies/gpedit.png" /></p>
+<p>Seguidament, cliquem a configuracio d'usuari.</p>
+<p><img alt="alt text" src="../img/sprint6/copies/configUsuari.png" /></p>
+<p>Cliquem a configuracio de Windows</p>
+<p><img alt="alt text" src="../img/sprint6/copies/configWindows.png" /></p>
+<p>A continuacio, cliquem a Scripts.</p>
+<p><img alt="alt text" src="../img/sprint6/copies/scripts.png" /></p>
+<p>Cliquem a inici de sessio.</p>
+<p><img alt="alt text" src="../img/sprint6/copies/iniciarSessio.png" /></p>
+<p>Finalment, cliquem a agregar, per agregar l'script anteriorment creat.</p>
+<p><img alt="alt text" src="../img/sprint6/copies/agregar.png" /></p>
+<p><img alt="alt text" src="../img/sprint6/copies/agregao.png" /></p>
+<p>Ara, cada vegada que iniciem sessio, en la carpeta CopiaUsuaris -&gt; [Nom d'usuari] es copiara les dades de l'usuari.</p>
+<p><img alt="alt text" src="../img/sprint6/copies/mostra1.png" /></p>
+<p><img alt="alt text" src="../img/sprint6/copies/mostra2.png" /></p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Volver al principio
+          </button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      <a href="https://github.com/walidelourfi"  target="_blank" rel="noopener">By Walid El Ourfi</a>
+
+    </div>
+  
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/walidelourfi/Sistemes_Informatics" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://creativecommons.org/licenses/by/4.0/deed.es" target="_blank" rel="noopener" title="creativecommons.org" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.89 10.34-1.34.7c-.14-.3-.31-.51-.52-.63-.21-.12-.41-.18-.58-.18-.9 0-1.34.59-1.34 1.77 0 .54.11.97.34 1.29.22.32.55.48 1 .48.58 0 .99-.27 1.23-.86l1.23.63c-.26.49-.62.87-1.09 1.15-.46.28-.97.42-1.53.42-.9 0-1.62-.27-2.17-.82C6.58 13.74 6.3 13 6.3 12c0-.95.28-1.7.83-2.26.56-.56 1.26-.84 2.1-.84 1.24-.01 2.13.48 2.66 1.44m5.77 0-1.32.7c-.14-.3-.34-.51-.53-.63-.21-.12-.41-.18-.6-.18-.89 0-1.34.59-1.34 1.77 0 .54.13.97.34 1.29.23.32.56.48 1 .48.59 0 1-.27 1.24-.86l1.25.63c-.28.49-.65.87-1.11 1.15-.47.28-.97.42-1.52.42-.9 0-1.63-.27-2.17-.82-.54-.55-.81-1.29-.81-2.29 0-.95.28-1.7.83-2.26.55-.56 1.25-.84 2.08-.84 1.26-.01 2.14.48 2.66 1.44M12 3.5a8.5 8.5 0 0 1 8.5 8.5 8.5 8.5 0 0 1-8.5 8.5A8.5 8.5 0 0 1 3.5 12 8.5 8.5 0 0 1 12 3.5M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2Z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.sections", "toc.integrate", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy"], "search": "../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.4e0fa4ba.min.js"></script>
+      
+    
+  </body>
+</html>
